@@ -356,6 +356,888 @@ const NATURAL_DB = {
 // Merge natural DB into main DB
 Object.assign(INGREDIENT_DB, NATURAL_DB);
 
+// ── EXTENDED DATABASE — additional entries ──────────────────
+Object.assign(INGREDIENT_DB, {
+  // More colours
+  "101a":{ name:"Riboflavin-5-Phosphate", status:"ok", detail:"Vitamin B2 form. Safe and beneficial." },
+  "150":{ name:"Caramel Colour", status:"warn", detail:"Check specific type — class III/IV contain possible carcinogens." },
+  "160e":{ name:"Beta-apo-8-carotenal", status:"ok", detail:"Natural orange colour. Safe." },
+  "160f":{ name:"Beta-apo-8-carotenic acid ethyl ester", status:"ok", detail:"Natural colour. Safe." },
+  "161g":{ name:"Canthaxanthin", status:"warn", detail:"Orange colour. High doses linked to retinal deposits. Restricted in some countries." },
+  "173":{ name:"Aluminium (colour)", status:"warn", detail:"Metal colour agent. Aluminium accumulation concerns with high intake." },
+  "174":{ name:"Silver", status:"ok", detail:"Decorative silver colour. Safe in tiny amounts used for decoration." },
+  "175":{ name:"Gold", status:"ok", detail:"Decorative gold colour. Inert and safe." },
+  "180":{ name:"Litholrubine BK", status:"warn", detail:"Red colour for cheese rind. Limited safety data." },
+
+  // More preservatives
+  "236":{ name:"Formic Acid", status:"warn", detail:"Preservative. Can cause irritation. Limited food use." },
+  "237":{ name:"Sodium Formate", status:"warn", detail:"Preservative. Limited safety data at food levels." },
+  "238":{ name:"Calcium Formate", status:"warn", detail:"Preservative. Limited food use." },
+  "239":{ name:"Hexamethylene Tetramine", status:"bad", detail:"Preservative banned in many countries. Can release formaldehyde." },
+  "242":{ name:"Dimethyl Dicarbonate", status:"ok", detail:"Preservative in beverages. Breaks down to safe compounds. Generally safe." },
+  "260":{ name:"Acetic Acid", status:"ok", detail:"Vinegar — natural and safe." },
+  "270":{ name:"Lactic Acid", status:"ok", detail:"Natural fermentation acid. Safe and beneficial." },
+
+  // More antioxidants
+  "303":{ name:"Potassium Ascorbate", status:"ok", detail:"Vitamin C salt. Safe." },
+  "308":{ name:"Synthetic Gamma-Tocopherol", status:"ok", detail:"Synthetic Vitamin E form. Generally safe." },
+  "309":{ name:"Synthetic Delta-Tocopherol", status:"ok", detail:"Synthetic Vitamin E form. Safe." },
+  "313":{ name:"Methyl Gallate", status:"warn", detail:"Antioxidant. Limited safety data." },
+  "314":{ name:"Guaiac Resin", status:"warn", detail:"Natural antioxidant. May cause allergic reactions." },
+  "317":{ name:"Erythorbic Acid", status:"ok", detail:"Vitamin C isomer. Safe antioxidant." },
+  "318":{ name:"Calcium Erythorbate", status:"ok", detail:"Antioxidant. Safe." },
+  "323":{ name:"Anoxomer", status:"ok", detail:"Antioxidant. Generally safe." },
+  "324":{ name:"Ethoxyquin", status:"bad", detail:"Synthetic antioxidant. Possible carcinogen. Banned in food in EU and Australia." },
+  "328":{ name:"Potassium Lactate", status:"ok", detail:"Safe preservative and acidity regulator." },
+  "329":{ name:"Magnesium Lactate", status:"ok", detail:"Mineral supplement. Safe." },
+  "344":{ name:"Choline Bitartrate", status:"ok", detail:"Essential nutrient. Beneficial." },
+  "345":{ name:"Magnesium Citrate", status:"ok", detail:"Magnesium supplement. Safe and beneficial." },
+  "349":{ name:"Ammonium Malate", status:"ok", detail:"Acidity regulator. Safe." },
+  "352":{ name:"Calcium Malate", status:"ok", detail:"Acidity regulator. Safe." },
+  "353":{ name:"Metatartaric Acid", status:"ok", detail:"Used in wine production. Safe." },
+  "354":{ name:"Calcium Tartrate", status:"ok", detail:"Acidity regulator. Safe." },
+  "355":{ name:"Adipic Acid", status:"ok", detail:"Naturally occurring acid. Safe." },
+  "356":{ name:"Sodium Adipate", status:"ok", detail:"Acidity regulator. Safe." },
+  "357":{ name:"Potassium Adipate", status:"ok", detail:"Acidity regulator. Safe." },
+  "359":{ name:"Ammonium Adipate", status:"ok", detail:"Acidity regulator. Safe." },
+  "363":{ name:"Succinic Acid", status:"ok", detail:"Natural acid found in many foods. Safe." },
+  "365":{ name:"Sodium Fumarate", status:"ok", detail:"Acidity regulator. Safe." },
+  "366":{ name:"Potassium Fumarate", status:"ok", detail:"Acidity regulator. Safe." },
+  "367":{ name:"Calcium Fumarate", status:"ok", detail:"Acidity regulator. Safe." },
+  "368":{ name:"Ammonium Fumarate", status:"ok", detail:"Acidity regulator. Safe." },
+  "370":{ name:"1,4-Heptonolactone", status:"ok", detail:"Acidity regulator. Safe." },
+  "375":{ name:"Nicotinic Acid (Niacin)", status:"ok", detail:"Essential Vitamin B3. Beneficial." },
+  "380":{ name:"Triammonium Citrate", status:"ok", detail:"Acidity regulator. Safe." },
+  "381":{ name:"Ferric Ammonium Citrate", status:"ok", detail:"Iron supplement. Safe." },
+  "382":{ name:"Calcium Disodium Ethylene", status:"ok", detail:"Sequestrant. Safe at food levels." },
+  "384":{ name:"Isopropyl Citrate", status:"ok", detail:"Antioxidant synergist. Safe." },
+  "386":{ name:"Disodium EDTA", status:"warn", detail:"Chelating agent. May reduce mineral absorption." },
+  "387":{ name:"Oxystearin", status:"ok", detail:"Crystallisation inhibitor. Safe." },
+  "388":{ name:"Thiodipropionic Acid", status:"ok", detail:"Antioxidant. Safe." },
+  "389":{ name:"Dilauryl Thiodipropionate", status:"ok", detail:"Antioxidant in fats. Safe." },
+  "390":{ name:"Distearyl Thiodipropionate", status:"ok", detail:"Antioxidant. Safe." },
+
+  // More thickeners/emulsifiers
+  "403":{ name:"Ammonium Alginate", status:"ok", detail:"Natural thickener from seaweed. Safe." },
+  "405":{ name:"Propylene Glycol Alginate", status:"ok", detail:"Thickener. Generally safe." },
+  "407a":{ name:"Processed Eucheuma Seaweed", status:"warn", detail:"Related to carrageenan. Similar gut inflammation concerns." },
+  "408":{ name:"Cassia Gum", status:"ok", detail:"Natural thickener. Safe." },
+  "409":{ name:"Arabinogalactan", status:"ok", detail:"Natural fibre. Safe and acts as prebiotic." },
+  "411":{ name:"Oat Gum", status:"ok", detail:"Natural oat fibre. Safe and beneficial." },
+  "416":{ name:"Karaya Gum", status:"ok", detail:"Natural plant gum. Safe." },
+  "417":{ name:"Tara Gum", status:"ok", detail:"Natural gum. Safe." },
+  "419":{ name:"Ghatti Gum", status:"ok", detail:"Natural tree gum. Safe." },
+  "423":{ name:"Octenyl Succinic Acid Modified Starch", status:"ok", detail:"Modified starch emulsifier. Safe." },
+  "424":{ name:"Curdlan", status:"ok", detail:"Natural gum from fermentation. Safe." },
+  "426":{ name:"Soybean Hemicellulose", status:"ok", detail:"Natural plant fibre. Safe." },
+  "427":{ name:"Cassia Seed Gum", status:"ok", detail:"Natural thickener. Safe." },
+  "428":{ name:"Gelatin", status:"ok", detail:"Animal protein. Safe but not vegan." },
+  "429":{ name:"Peptones", status:"ok", detail:"Protein hydrolysate. Safe." },
+  "430":{ name:"Polyoxyethylene Stearate", status:"warn", detail:"Synthetic emulsifier. Limited long-term data." },
+  "431":{ name:"Polyoxyl Stearate", status:"warn", detail:"Synthetic emulsifier. May disrupt gut microbiome." },
+  "432":{ name:"Polysorbate 20", status:"warn", detail:"Emulsifier. Animal studies show gut lining disruption." },
+  "434":{ name:"Polysorbate 40", status:"warn", detail:"Emulsifier. Similar gut concerns to other polysorbates." },
+  "436":{ name:"Polysorbate 65", status:"warn", detail:"Emulsifier. Similar concerns to other polysorbates." },
+  "441":{ name:"Gelatine", status:"ok", detail:"Animal protein. Safe but not vegan." },
+  "442":{ name:"Ammonium Phosphatides", status:"ok", detail:"Emulsifier in chocolate. Safe." },
+  "444":{ name:"Sucrose Acetate Isobutyrate", status:"ok", detail:"Emulsifier. Safe at approved levels." },
+  "445":{ name:"Glycerol Esters of Wood Rosins", status:"ok", detail:"Emulsifier in beverages. Safe." },
+  "446":{ name:"Succistearin", status:"ok", detail:"Emulsifier. Safe." },
+  "462":{ name:"Ethyl Cellulose", status:"ok", detail:"Modified cellulose coating. Safe." },
+  "463":{ name:"Hydroxypropyl Cellulose", status:"ok", detail:"Modified cellulose. Safe." },
+  "465":{ name:"Methylethylcellulose", status:"ok", detail:"Modified cellulose. Safe." },
+  "467":{ name:"Ethylhydroxyethylcellulose", status:"ok", detail:"Modified cellulose. Safe." },
+  "470":{ name:"Magnesium Stearate", status:"ok", detail:"Anti-caking and emulsifier. Safe." },
+  "472a":{ name:"Acetic Acid Esters of Mono/Diglycerides", status:"ok", detail:"Emulsifier. Safe." },
+  "472b":{ name:"Lactic Acid Esters of Mono/Diglycerides", status:"ok", detail:"Emulsifier. Safe." },
+  "472c":{ name:"Citric Acid Esters of Mono/Diglycerides", status:"ok", detail:"Emulsifier. Safe." },
+  "472d":{ name:"Tartaric Acid Esters of Mono/Diglycerides", status:"ok", detail:"Emulsifier. Safe." },
+  "472f":{ name:"Mixed Acetic/Tartaric Acid Esters", status:"ok", detail:"Emulsifier. Safe." },
+  "474":{ name:"Sucroglycerides", status:"ok", detail:"Emulsifier. Safe." },
+  "475":{ name:"Polyglycerol Esters of Fatty Acids", status:"ok", detail:"Emulsifier. Safe." },
+  "477":{ name:"Propylene Glycol Esters", status:"ok", detail:"Emulsifier. Safe." },
+  "478":{ name:"Lactylated Fatty Acid Esters", status:"ok", detail:"Emulsifier. Safe." },
+  "479b":{ name:"Thermally Oxidized Soya Bean Oil", status:"ok", detail:"Emulsifier. Safe." },
+  "480":{ name:"Dioctyl Sodium Sulphosuccinate", status:"ok", detail:"Emulsifier. Safe at low levels." },
+  "482":{ name:"Calcium Stearoyl Lactylate", status:"ok", detail:"Emulsifier. Safe." },
+  "483":{ name:"Stearyl Tartrate", status:"ok", detail:"Flour treatment. Safe." },
+  "484":{ name:"Stearyl Citrate", status:"ok", detail:"Emulsifier. Safe." },
+  "492":{ name:"Sorbitan Tristearate", status:"ok", detail:"Emulsifier. Safe." },
+  "493":{ name:"Sorbitan Monolaurate", status:"ok", detail:"Emulsifier. Safe." },
+  "494":{ name:"Sorbitan Monooleate", status:"ok", detail:"Emulsifier. Safe." },
+  "495":{ name:"Sorbitan Monopalmitate", status:"ok", detail:"Emulsifier. Safe." },
+  "496":{ name:"Sorbitan Trioleate", status:"ok", detail:"Emulsifier. Safe." },
+
+  // More mineral salts & regulators
+  "505":{ name:"Ferrous Carbonate", status:"ok", detail:"Iron supplement. Safe." },
+  "507":{ name:"Hydrochloric Acid", status:"ok", detail:"Acidity regulator. Neutralised in product. Safe." },
+  "510":{ name:"Ammonium Chloride", status:"ok", detail:"Leavening agent. Safe in food amounts." },
+  "511":{ name:"Magnesium Chloride", status:"ok", detail:"Mineral salt. Safe." },
+  "512":{ name:"Stannous Chloride", status:"warn", detail:"Tin salt. Can be toxic in excess." },
+  "513":{ name:"Sulphuric Acid", status:"ok", detail:"Acidity regulator. Neutralised in product." },
+  "514":{ name:"Sodium Sulphate", status:"ok", detail:"Mineral salt. Safe at food levels." },
+  "515":{ name:"Potassium Sulphate", status:"ok", detail:"Mineral salt. Safe." },
+  "517":{ name:"Ammonium Sulphate", status:"ok", detail:"Mineral salt and yeast food. Safe." },
+  "518":{ name:"Magnesium Sulphate", status:"ok", detail:"Magnesium supplement. Safe." },
+  "519":{ name:"Cupric Sulphate", status:"warn", detail:"Copper salt. Safe in tiny food amounts; toxic in excess." },
+  "520":{ name:"Aluminium Sulphate", status:"warn", detail:"Contains aluminium. High intake may affect neurological health." },
+  "521":{ name:"Aluminium Sodium Sulphate", status:"warn", detail:"Contains aluminium. Neurological concerns with excessive intake." },
+  "522":{ name:"Aluminium Potassium Sulphate", status:"warn", detail:"Alum — contains aluminium. Avoid excess." },
+  "523":{ name:"Aluminium Ammonium Sulphate", status:"warn", detail:"Contains aluminium. Excess intake concerning." },
+  "525":{ name:"Potassium Hydroxide", status:"ok", detail:"Acidity regulator. Neutralised in product. Safe." },
+  "526":{ name:"Calcium Hydroxide", status:"ok", detail:"Acidity regulator. Safe." },
+  "527":{ name:"Ammonium Hydroxide", status:"ok", detail:"Acidity regulator. Safe at food levels." },
+  "528":{ name:"Magnesium Hydroxide", status:"ok", detail:"Antacid and acidity regulator. Safe." },
+  "529":{ name:"Calcium Oxide", status:"ok", detail:"Acidity regulator. Safe at food levels." },
+  "530":{ name:"Magnesium Oxide", status:"ok", detail:"Anti-caking. Magnesium supplement. Safe." },
+  "535":{ name:"Sodium Ferrocyanide", status:"ok", detail:"Anti-caking in salt. Safe at approved levels." },
+  "536":{ name:"Potassium Ferrocyanide", status:"ok", detail:"Anti-caking agent. Safe." },
+  "538":{ name:"Calcium Ferrocyanide", status:"ok", detail:"Anti-caking agent. Safe." },
+  "540":{ name:"Dicalcium Diphosphate", status:"ok", detail:"Calcium supplement. Safe." },
+  "542":{ name:"Edible Bone Phosphate", status:"ok", detail:"Calcium supplement from bones. Safe but not vegan." },
+  "543":{ name:"Calcium Sodium Polyphosphate", status:"ok", detail:"Mineral salt. Safe." },
+  "544":{ name:"Calcium Polyphosphate", status:"ok", detail:"Mineral salt. Safe in moderation." },
+  "545":{ name:"Ammonium Polyphosphate", status:"ok", detail:"Leavening agent. Safe." },
+  "546":{ name:"Magnesium Polyphosphate", status:"ok", detail:"Mineral salt. Safe." },
+  "550":{ name:"Sodium Silicate", status:"ok", detail:"Anti-caking. Safe." },
+  "553a":{ name:"Magnesium Silicate", status:"ok", detail:"Anti-caking agent. Safe." },
+  "553b":{ name:"Talc", status:"warn", detail:"Mineral anti-caking. Some concerns about purity and contamination with asbestos-like fibres." },
+  "554":{ name:"Sodium Aluminosilicate", status:"warn", detail:"Contains aluminium — accumulation concerns." },
+  "555":{ name:"Potassium Aluminium Silicate", status:"warn", detail:"Contains aluminium. Avoid excess." },
+  "556":{ name:"Calcium Aluminium Silicate", status:"warn", detail:"Contains aluminium." },
+  "558":{ name:"Bentonite", status:"ok", detail:"Natural clay anti-caking. Safe." },
+  "559":{ name:"Aluminium Silicate", status:"warn", detail:"Anti-caking. Aluminium content concern." },
+  "560":{ name:"Potassium Silicate", status:"ok", detail:"Anti-caking. Safe." },
+  "570":{ name:"Fatty Acids", status:"ok", detail:"Anti-caking. Safe." },
+  "574":{ name:"Gluconic Acid", status:"ok", detail:"Natural acid. Safe." },
+  "576":{ name:"Sodium Gluconate", status:"ok", detail:"Safe mineral salt." },
+  "577":{ name:"Potassium Gluconate", status:"ok", detail:"Mineral supplement. Safe." },
+  "580":{ name:"Magnesium Gluconate", status:"ok", detail:"Magnesium supplement. Safe." },
+
+  // More flavour enhancers
+  "624":{ name:"Monoammonium Glutamate", status:"warn", detail:"MSG variant. Similar sensitivity concerns." },
+  "626":{ name:"Guanylic Acid", status:"warn", detail:"Flavour enhancer. Avoid with gout — high purine." },
+  "628":{ name:"Dipotassium Guanylate", status:"warn", detail:"Flavour enhancer. Avoid with gout." },
+  "629":{ name:"Calcium Guanylate", status:"warn", detail:"Flavour enhancer. Avoid with gout." },
+  "630":{ name:"Inosinic Acid", status:"warn", detail:"Flavour enhancer. Not suitable for gout sufferers." },
+  "632":{ name:"Dipotassium Inosinate", status:"warn", detail:"Flavour enhancer. Avoid with gout." },
+  "633":{ name:"Calcium Inosinate", status:"warn", detail:"Flavour enhancer. Avoid with gout." },
+  "634":{ name:"Calcium 5-Ribonucleotides", status:"warn", detail:"Flavour enhancer blend. Not suitable for gout." },
+  "637":{ name:"Ethyl Maltol", status:"ok", detail:"Synthetic flavour enhancer. Generally safe." },
+  "641":{ name:"L-Leucine", status:"ok", detail:"Essential amino acid. Safe and beneficial." },
+  "642":{ name:"Lysine Hydrochloride", status:"ok", detail:"Essential amino acid. Safe." },
+
+  // More sweeteners
+  "956":{ name:"Alitame", status:"warn", detail:"Artificial sweetener. Limited long-term safety data." },
+  "959":{ name:"Neohesperidine DC", status:"warn", detail:"Artificial sweetener. Limited safety data." },
+  "961":{ name:"Neotame", status:"warn", detail:"Very high potency artificial sweetener. Limited long-term data." },
+  "962":{ name:"Aspartame-Acesulfame Salt", status:"warn", detail:"Combines concerns of both aspartame and acesulfame K." },
+  "969":{ name:"Advantame", status:"warn", detail:"Very new sweetener. Limited long-term human data." },
+
+  // Glazing & misc
+  "901":{ name:"Beeswax (white & yellow)", status:"ok", detail:"Natural glazing. Safe." },
+  "902":{ name:"Candelilla Wax", status:"ok", detail:"Natural plant wax. Vegan alternative to beeswax. Safe." },
+  "904":{ name:"Shellac", status:"ok", detail:"Natural resin from lac insects. Safe but not vegan." },
+  "905a":{ name:"Petroleum Jelly", status:"warn", detail:"Petroleum-derived. Concern about contamination with polycyclic aromatic hydrocarbons." },
+  "905b":{ name:"White Mineral Oil", status:"warn", detail:"Petroleum-derived. EU has restricted use in some food applications." },
+  "905c":{ name:"Microcrystalline Wax", status:"warn", detail:"Petroleum-derived wax. Limited food use." },
+  "906":{ name:"Benzoin Gum", status:"ok", detail:"Natural resin glazing. Safe." },
+  "907":{ name:"Refined Microcrystalline Wax", status:"warn", detail:"Petroleum-derived. Limited food use." },
+  "908":{ name:"Rice Bran Wax", status:"ok", detail:"Natural plant wax. Safe." },
+  "909":{ name:"Spermaceti Wax", status:"ok", detail:"Glazing agent. Safe." },
+  "910":{ name:"Lac Wax", status:"ok", detail:"Natural insect wax. Safe." },
+  "911":{ name:"Methyl Esters of Fatty Acids", status:"ok", detail:"Glazing agent. Safe." },
+  "912":{ name:"Montan Acid Esters", status:"ok", detail:"Glazing agent. Safe." },
+  "914":{ name:"Oxidized Polyethylene Wax", status:"ok", detail:"Glazing. Safe." },
+  "915":{ name:"Glycerol Esters of Colophane", status:"ok", detail:"Glazing. Safe." },
+  "916":{ name:"Calcium Iodate", status:"ok", detail:"Flour treatment. Safe." },
+  "917":{ name:"Potassium Iodate", status:"ok", detail:"Flour treatment. Safe." },
+  "918":{ name:"Nitrogen Oxides", status:"ok", detail:"Packaging gas. Safe." },
+  "919":{ name:"Nitrosyl Chloride", status:"warn", detail:"Flour treatment. Limited use." },
+  "921":{ name:"L-Cystine", status:"ok", detail:"Amino acid dough conditioner. Safe." },
+  "922":{ name:"Potassium Persulphate", status:"warn", detail:"Flour treatment. Can cause allergic reactions." },
+  "923":{ name:"Ammonium Persulphate", status:"warn", detail:"Flour treatment. Allergy risk." },
+  "924":{ name:"Potassium Bromate", status:"bad", detail:"Flour treatment. Classified as possible carcinogen. Banned in EU, Canada, Australia." },
+  "925":{ name:"Chlorine", status:"warn", detail:"Flour bleaching. Banned in EU." },
+  "926":{ name:"Chlorine Dioxide", status:"warn", detail:"Flour bleaching. Banned in EU." },
+  "927a":{ name:"Azodicarbonamide", status:"bad", detail:"Flour treatment. Banned in EU and Australia. Breaks down to possible carcinogen semicarbazide." },
+  "927b":{ name:"Carbamide (Urea)", status:"ok", detail:"Dough conditioner. Safe." },
+  "928":{ name:"Benzoyl Peroxide", status:"warn", detail:"Flour bleaching. Destroys nutrients. Banned in EU." },
+  "929":{ name:"Acetone Peroxide", status:"warn", detail:"Flour treatment. Limited use." },
+  "930":{ name:"Calcium Peroxide", status:"ok", detail:"Flour treatment. Safe." },
+  "938":{ name:"Argon", status:"ok", detail:"Packaging gas. Safe." },
+  "939":{ name:"Helium", status:"ok", detail:"Packaging gas. Safe." },
+  "940":{ name:"Dichlorodifluoromethane", status:"ok", detail:"Freezing agent. Safe at food levels." },
+  "941":{ name:"Nitrogen", status:"ok", detail:"Packaging gas. Safe." },
+  "942":{ name:"Nitrous Oxide", status:"ok", detail:"Propellant in whipped cream. Safe at food levels." },
+  "943a":{ name:"Butane", status:"ok", detail:"Propellant. Safe at food levels." },
+  "943b":{ name:"Isobutane", status:"ok", detail:"Propellant. Safe." },
+  "944":{ name:"Propane", status:"ok", detail:"Propellant. Safe." },
+  "948":{ name:"Oxygen", status:"ok", detail:"Packaging gas. Safe." },
+  "949":{ name:"Hydrogen", status:"ok", detail:"Packaging gas. Safe." },
+  "953":{ name:"Isomalt", status:"ok", detail:"Sugar alcohol. Mild digestive discomfort in large amounts." },
+  "961":{ name:"Neotame", status:"warn", detail:"Artificial sweetener. Very high potency. Limited long-term data." },
+  "999":{ name:"Quillaia Extract", status:"ok", detail:"Natural foaming agent from tree bark. Safe at food levels." },
+});
+
+// Additional natural ingredient entries
+Object.assign(INGREDIENT_DB, {
+  "partially hydrogenated oil":{ name:"Partially Hydrogenated Oil", status:"bad", detail:"Major source of artificial trans fats. Strongly linked to heart disease and stroke. Banned in many countries." },
+  "hydrogenated vegetable oil":{ name:"Hydrogenated Vegetable Oil", status:"bad", detail:"Contains trans fats. Major cardiovascular risk." },
+  "trans fat":{ name:"Trans Fat", status:"bad", detail:"Artificial trans fats raise bad cholesterol and lower good cholesterol. Heart disease risk." },
+  "shortening":{ name:"Shortening", status:"warn", detail:"Often partially hydrogenated — check label for trans fats." },
+  "lard":{ name:"Lard", status:"warn", detail:"Pig fat. High saturated fat. Not suitable for many diets." },
+  "tallow":{ name:"Tallow", status:"warn", detail:"Beef fat. High saturated fat." },
+  "ghee":{ name:"Ghee", status:"warn", detail:"Clarified butter. High saturated fat — moderation advised." },
+  "margarine":{ name:"Margarine", status:"warn", detail:"May contain trans fats depending on type. Check label." },
+  "whey":{ name:"Whey", status:"ok", detail:"Dairy protein. High quality protein. Avoid if dairy intolerant." },
+  "whey powder":{ name:"Whey Powder", status:"ok", detail:"Concentrated dairy protein. Safe." },
+  "casein":{ name:"Casein", status:"ok", detail:"Dairy protein. Safe. Avoid if dairy allergic." },
+  "lactose":{ name:"Lactose", status:"warn", detail:"Milk sugar. Causes digestive issues in lactose intolerant individuals." },
+  "skimmed milk powder":{ name:"Skimmed Milk Powder", status:"ok", detail:"Low fat dairy. Good protein and calcium." },
+  "buttermilk":{ name:"Buttermilk", status:"ok", detail:"Fermented dairy. Safe. Good for gut health." },
+  "yoghurt":{ name:"Yoghurt", status:"ok", detail:"Fermented dairy. Beneficial probiotics. Safe." },
+  "invert sugar":{ name:"Invert Sugar", status:"warn", detail:"Mixture of glucose and fructose. High sugar — similar concerns to regular sugar." },
+  "treacle":{ name:"Treacle", status:"warn", detail:"Refined sugar syrup. High sugar content." },
+  "molasses":{ name:"Molasses", status:"warn", detail:"Sugar by-product. High sugar but contains some minerals." },
+  "agave":{ name:"Agave Syrup", status:"warn", detail:"Very high fructose content (70-90%). Linked to fatty liver with excess intake despite low GI." },
+  "rice syrup":{ name:"Rice Syrup", status:"warn", detail:"High glycaemic index — spikes blood sugar rapidly." },
+  "barley malt":{ name:"Barley Malt", status:"ok", detail:"Natural sweetener from barley. Contains gluten." },
+  "malt extract":{ name:"Malt Extract", status:"ok", detail:"Natural extract from malted barley. Contains gluten." },
+  "malt syrup":{ name:"Malt Syrup", status:"ok", detail:"Natural barley syrup. Contains gluten." },
+  "brown rice syrup":{ name:"Brown Rice Syrup", status:"warn", detail:"High glycaemic index. May contain trace arsenic." },
+  "stevia leaf extract":{ name:"Stevia Leaf Extract", status:"ok", detail:"Natural sweetener. Safe." },
+  "monk fruit":{ name:"Monk Fruit Extract", status:"ok", detail:"Natural sweetener. Zero calories. Safe." },
+  "lo han guo":{ name:"Lo Han Guo", status:"ok", detail:"Monk fruit sweetener. Natural and safe." },
+  "tagatose":{ name:"Tagatose", status:"ok", detail:"Naturally occurring rare sugar. Low GI. Safe." },
+  "trehalose":{ name:"Trehalose", status:"warn", detail:"Natural sugar. Some research links high intake to C. difficile infections." },
+  "isomaltulose":{ name:"Isomaltulose", status:"ok", detail:"Naturally occurring sugar. Lower GI than sucrose. Safe." },
+  "inulin":{ name:"Inulin", status:"ok", detail:"Natural prebiotic fibre. Beneficial for gut health. May cause gas in sensitive individuals." },
+  "fructooligosaccharides":{ name:"Fructooligosaccharides (FOS)", status:"ok", detail:"Prebiotic fibre. Beneficial for gut health." },
+  "psyllium":{ name:"Psyllium Husk", status:"ok", detail:"Natural soluble fibre. Excellent for gut and cholesterol." },
+  "oat bran":{ name:"Oat Bran", status:"ok", detail:"Excellent source of soluble fibre. Lowers cholesterol." },
+  "wheat bran":{ name:"Wheat Bran", status:"ok", detail:"Good source of fibre. Contains gluten." },
+  "flaxseed":{ name:"Flaxseed", status:"ok", detail:"Excellent source of omega-3 and fibre. Beneficial." },
+  "chia seeds":{ name:"Chia Seeds", status:"ok", detail:"Excellent source of omega-3, fibre and protein. Beneficial." },
+  "sunflower seeds":{ name:"Sunflower Seeds", status:"ok", detail:"Nutritious seeds. Good Vitamin E source." },
+  "sesame seeds":{ name:"Sesame Seeds", status:"ok", detail:"Nutritious seeds. Good calcium source. Common allergen." },
+  "peanuts":{ name:"Peanuts", status:"ok", detail:"Good protein and healthy fat source. Major allergen." },
+  "almonds":{ name:"Almonds", status:"ok", detail:"Nutritious nut. Heart-healthy fats. Tree nut allergen." },
+  "walnuts":{ name:"Walnuts", status:"ok", detail:"Excellent source of omega-3 fatty acids. Beneficial." },
+  "cashews":{ name:"Cashews", status:"ok", detail:"Nutritious nut. Good minerals. Tree nut allergen." },
+  "soy protein":{ name:"Soy Protein", status:"ok", detail:"Plant protein. Safe. Common allergen." },
+  "soy protein isolate":{ name:"Soy Protein Isolate", status:"ok", detail:"Concentrated plant protein. Safe." },
+  "pea protein":{ name:"Pea Protein", status:"ok", detail:"Plant protein. Safe and well tolerated." },
+  "rice protein":{ name:"Rice Protein", status:"ok", detail:"Plant protein. Hypoallergenic. Safe." },
+  "gluten":{ name:"Gluten", status:"warn", detail:"Wheat protein. Safe for most people but causes serious illness in coeliac disease." },
+  "wheat gluten":{ name:"Wheat Gluten", status:"warn", detail:"Concentrated wheat protein. Avoid with coeliac disease or gluten sensitivity." },
+  "vital wheat gluten":{ name:"Vital Wheat Gluten", status:"warn", detail:"Concentrated gluten. Avoid with coeliac disease." },
+  "hydrolysed vegetable protein":{ name:"Hydrolysed Vegetable Protein", status:"warn", detail:"Contains naturally occurring MSG-like glutamates. May trigger sensitivity in some people." },
+  "hydrolysed soy protein":{ name:"Hydrolysed Soy Protein", status:"warn", detail:"Contains glutamates. Soy allergen." },
+  "hydrolysed wheat protein":{ name:"Hydrolysed Wheat Protein", status:"warn", detail:"Contains glutamates. Gluten allergen." },
+  "textured vegetable protein":{ name:"Textured Vegetable Protein (TVP)", status:"ok", detail:"Plant-based meat alternative. Safe." },
+  "carob powder":{ name:"Carob Powder", status:"ok", detail:"Natural chocolate alternative. Safe. Naturally sweet." },
+  "carob bean gum":{ name:"Carob Bean Gum", status:"ok", detail:"Same as locust bean gum. Natural thickener. Safe." },
+  "chicory root":{ name:"Chicory Root", status:"ok", detail:"Natural source of inulin. Beneficial prebiotic." },
+  "chicory extract":{ name:"Chicory Extract", status:"ok", detail:"Natural prebiotic fibre extract. Beneficial." },
+  "rice flour":{ name:"Rice Flour", status:"ok", detail:"Gluten-free flour. Safe." },
+  "corn flour":{ name:"Corn Flour", status:"ok", detail:"Gluten-free flour. Safe." },
+  "chickpea flour":{ name:"Chickpea Flour", status:"ok", detail:"High protein flour. Nutritious." },
+  "almond flour":{ name:"Almond Flour", status:"ok", detail:"Gluten-free. Nutritious. Tree nut allergen." },
+  "coconut flour":{ name:"Coconut Flour", status:"ok", detail:"Gluten-free. High fibre. Safe." },
+  "buckwheat flour":{ name:"Buckwheat Flour", status:"ok", detail:"Gluten-free. Nutritious and high in minerals." },
+  "spelt flour":{ name:"Spelt Flour", status:"ok", detail:"Ancient wheat variety. Contains gluten." },
+  "rye flour":{ name:"Rye Flour", status:"ok", detail:"Nutritious grain. Contains gluten." },
+  "barley flour":{ name:"Barley Flour", status:"ok", detail:"Contains gluten. Good fibre source." },
+  "sesame oil":{ name:"Sesame Oil", status:"ok", detail:"Heart-healthy oil. Rich in antioxidants." },
+  "flaxseed oil":{ name:"Flaxseed Oil", status:"ok", detail:"Excellent source of omega-3. Beneficial." },
+  "fish oil":{ name:"Fish Oil", status:"ok", detail:"Rich in omega-3. Beneficial for cardiovascular health." },
+  "krill oil":{ name:"Krill Oil", status:"ok", detail:"Omega-3 source. Generally safe." },
+  "evening primrose oil":{ name:"Evening Primrose Oil", status:"ok", detail:"GLA source. Generally safe." },
+  "rapeseed oil":{ name:"Rapeseed Oil", status:"ok", detail:"Same as canola oil. Heart-healthy. Safe." },
+  "rice bran oil":{ name:"Rice Bran Oil", status:"ok", detail:"Heart-healthy oil with good fatty acid profile." },
+  "avocado oil":{ name:"Avocado Oil", status:"ok", detail:"Healthy monounsaturated fats. Beneficial." },
+  "soybean oil":{ name:"Soybean Oil", status:"ok", detail:"Common cooking oil. Generally safe." },
+  "corn oil":{ name:"Corn Oil", status:"ok", detail:"Common cooking oil. High in omega-6. Safe." },
+  "grapeseed oil":{ name:"Grapeseed Oil", status:"ok", detail:"High in omega-6. Safe." },
+  "peanut oil":{ name:"Peanut Oil", status:"ok", detail:"Heart-healthy oil. Peanut allergen." },
+  "aloe vera":{ name:"Aloe Vera", status:"ok", detail:"Natural ingredient. Safe in food amounts." },
+  "green tea extract":{ name:"Green Tea Extract", status:"ok", detail:"Antioxidant. Safe in food amounts. Contains caffeine." },
+  "grape seed extract":{ name:"Grape Seed Extract", status:"ok", detail:"Antioxidant. Safe." },
+  "resveratrol":{ name:"Resveratrol", status:"ok", detail:"Antioxidant from grapes. Safe in food amounts." },
+  "lycopene":{ name:"Lycopene", status:"ok", detail:"Antioxidant from tomatoes. Beneficial." },
+  "astaxanthin":{ name:"Astaxanthin", status:"ok", detail:"Powerful antioxidant. Safe and beneficial." },
+  "coenzyme q10":{ name:"Coenzyme Q10", status:"ok", detail:"Antioxidant. Safe and beneficial." },
+  "glutamine":{ name:"Glutamine", status:"ok", detail:"Amino acid. Safe and beneficial for gut health." },
+  "taurine":{ name:"Taurine", status:"ok", detail:"Amino acid. Safe. Often added to energy drinks." },
+  "creatine":{ name:"Creatine", status:"ok", detail:"Natural compound. Safe and well studied." },
+  "beta-alanine":{ name:"Beta-Alanine", status:"ok", detail:"Amino acid. Safe. May cause harmless skin tingling." },
+  "carnitine":{ name:"Carnitine", status:"warn", detail:"Amino acid. Some research links very high supplementation to gut bacteria producing TMAO, linked to cardiovascular risk." },
+  "choline":{ name:"Choline", status:"ok", detail:"Essential nutrient. Safe and beneficial." },
+  "inositol":{ name:"Inositol", status:"ok", detail:"Vitamin-like nutrient. Safe." },
+  "biotin":{ name:"Biotin (Vitamin B7)", status:"ok", detail:"Essential B vitamin. Safe and beneficial." },
+  "pantothenic acid":{ name:"Pantothenic Acid (Vitamin B5)", status:"ok", detail:"Essential B vitamin. Beneficial." },
+  "pyridoxine":{ name:"Pyridoxine (Vitamin B6)", status:"ok", detail:"Essential B vitamin. Beneficial. Excess supplementation may cause nerve issues." },
+  "cyanocobalamin":{ name:"Cyanocobalamin (Vitamin B12)", status:"ok", detail:"Essential vitamin. Beneficial. Especially important for vegans." },
+  "folic acid":{ name:"Folic Acid", status:"ok", detail:"Essential vitamin B9. Especially important in pregnancy." },
+  "cholecalciferol":{ name:"Cholecalciferol (Vitamin D3)", status:"ok", detail:"Vitamin D. Essential. Beneficial." },
+  "ergocalciferol":{ name:"Ergocalciferol (Vitamin D2)", status:"ok", detail:"Plant-based Vitamin D. Beneficial." },
+  "retinol":{ name:"Retinol (Vitamin A)", status:"ok", detail:"Essential vitamin. Beneficial. Excess can be toxic." },
+  "phylloquinone":{ name:"Vitamin K1", status:"ok", detail:"Essential vitamin. Beneficial for blood clotting and bones." },
+  "menaquinone":{ name:"Vitamin K2", status:"ok", detail:"Beneficial for bones and cardiovascular health." },
+  "zinc sulphate":{ name:"Zinc Sulphate", status:"ok", detail:"Zinc supplement. Safe." },
+  "zinc oxide":{ name:"Zinc Oxide", status:"ok", detail:"Zinc supplement. Safe at food levels." },
+  "ferric oxide":{ name:"Ferric Oxide", status:"ok", detail:"Iron supplement. Safe." },
+  "ferrous sulphate":{ name:"Ferrous Sulphate", status:"ok", detail:"Iron supplement. Safe." },
+  "ferrous fumarate":{ name:"Ferrous Fumarate", status:"ok", detail:"Iron supplement. Safe." },
+  "selenium":{ name:"Selenium", status:"ok", detail:"Essential mineral. Beneficial antioxidant. Toxic in very large amounts." },
+  "iodine":{ name:"Iodine", status:"ok", detail:"Essential mineral for thyroid. Beneficial." },
+  "chromium":{ name:"Chromium", status:"ok", detail:"Essential trace mineral. Helps blood sugar regulation." },
+  "manganese":{ name:"Manganese", status:"ok", detail:"Essential trace mineral. Safe." },
+  "molybdenum":{ name:"Molybdenum", status:"ok", detail:"Essential trace mineral. Safe." },
+  "phosphorus":{ name:"Phosphorus", status:"ok", detail:"Essential mineral. Safe in food amounts." },
+  "sodium":{ name:"Sodium", status:"warn", detail:"Essential mineral but high intake raises blood pressure. Most Australians consume too much." },
+  "acidity regulator":{ name:"Acidity Regulator", status:"ok", detail:"Controls pH of food. Generally safe — check specific number." },
+  "anticaking agent":{ name:"Anti-caking Agent", status:"ok", detail:"Prevents clumping. Generally safe." },
+  "bulking agent":{ name:"Bulking Agent", status:"ok", detail:"Adds volume without many calories. Generally safe." },
+  "carrier":{ name:"Carrier", status:"ok", detail:"Dilutes or dissolves other additives. Generally safe." },
+  "foaming agent":{ name:"Foaming Agent", status:"ok", detail:"Creates or maintains foam. Generally safe." },
+  "flour treatment agent":{ name:"Flour Treatment Agent", status:"warn", detail:"Improves flour baking quality — check specific number." },
+  "glazing agent":{ name:"Glazing Agent", status:"ok", detail:"Provides shiny coating. Generally safe." },
+  "humectant":{ name:"Humectant", status:"ok", detail:"Retains moisture. Generally safe." },
+  "packaging gas":{ name:"Packaging Gas", status:"ok", detail:"Modified atmosphere packaging. Safe." },
+  "propellant":{ name:"Propellant", status:"ok", detail:"Expels product from container. Safe at food levels." },
+  "sequestrant":{ name:"Sequestrant", status:"ok", detail:"Binds metal ions. Generally safe." },
+  "stabiliser":{ name:"Stabiliser", status:"ok", detail:"Maintains texture. Generally safe." },
+  "firming agent":{ name:"Firming Agent", status:"ok", detail:"Maintains crispness. Generally safe." },
+  "release agent":{ name:"Release Agent", status:"ok", detail:"Prevents sticking. Generally safe." },
+  "wetting agent":{ name:"Wetting Agent", status:"ok", detail:"Improves mixing. Generally safe." },
+  "mineral salt":{ name:"Mineral Salt", status:"ok", detail:"Various minerals used as functional additives. Generally safe." },
+  "yeast":{ name:"Yeast", status:"ok", detail:"Natural leavening agent. Beneficial. Contains B vitamins." },
+  "dried yeast":{ name:"Dried Yeast", status:"ok", detail:"Natural. Safe. Good B vitamin source." },
+  "nutritional yeast":{ name:"Nutritional Yeast", status:"ok", detail:"Excellent source of B vitamins and protein. Beneficial." },
+  "vinegar":{ name:"Vinegar", status:"ok", detail:"Natural acid. Safe. May have digestive health benefits." },
+  "apple cider vinegar":{ name:"Apple Cider Vinegar", status:"ok", detail:"Natural vinegar. Safe. Some digestive benefits." },
+  "balsamic vinegar":{ name:"Balsamic Vinegar", status:"ok", detail:"Natural vinegar. Safe." },
+  "tomato paste":{ name:"Tomato Paste", status:"ok", detail:"Concentrated tomatoes. Rich in lycopene. Safe." },
+  "tomato puree":{ name:"Tomato Puree", status:"ok", detail:"Concentrated tomatoes. Safe." },
+  "lemon juice":{ name:"Lemon Juice", status:"ok", detail:"Natural citrus. Safe and beneficial." },
+  "lime juice":{ name:"Lime Juice", status:"ok", detail:"Natural citrus. Safe." },
+  "orange juice":{ name:"Orange Juice", status:"ok", detail:"Natural citrus. High in Vitamin C. High in natural sugars." },
+  "ginger":{ name:"Ginger", status:"ok", detail:"Natural spice. Anti-inflammatory. Beneficial." },
+  "cloves":{ name:"Cloves", status:"ok", detail:"Natural spice with antioxidant properties. Safe." },
+  "nutmeg":{ name:"Nutmeg", status:"warn", detail:"Natural spice. Safe in small culinary amounts. Toxic in large doses (over 5g)." },
+  "cardamom":{ name:"Cardamom", status:"ok", detail:"Natural spice. Safe and beneficial." },
+  "cumin":{ name:"Cumin", status:"ok", detail:"Natural spice. Safe and beneficial." },
+  "coriander":{ name:"Coriander", status:"ok", detail:"Natural spice/herb. Safe." },
+  "oregano":{ name:"Oregano", status:"ok", detail:"Natural herb. Safe and antioxidant." },
+  "thyme":{ name:"Thyme", status:"ok", detail:"Natural herb. Safe." },
+  "basil":{ name:"Basil", status:"ok", detail:"Natural herb. Safe." },
+  "bay leaf":{ name:"Bay Leaf", status:"ok", detail:"Natural herb. Safe." },
+  "dill":{ name:"Dill", status:"ok", detail:"Natural herb. Safe." },
+  "parsley":{ name:"Parsley", status:"ok", detail:"Natural herb. Safe. Rich in vitamins." },
+  "chilli":{ name:"Chilli", status:"ok", detail:"Natural spice. Capsaicin has anti-inflammatory properties. Safe." },
+  "cayenne pepper":{ name:"Cayenne Pepper", status:"ok", detail:"Natural spice. Safe. Anti-inflammatory." },
+  "mustard":{ name:"Mustard", status:"ok", detail:"Natural spice. Safe. Common allergen." },
+  "mustard powder":{ name:"Mustard Powder", status:"ok", detail:"Natural spice. Common allergen." },
+  "celery seed":{ name:"Celery Seed", status:"ok", detail:"Natural spice. Common allergen." },
+  "celery salt":{ name:"Celery Salt", status:"warn", detail:"High sodium. Celery allergen." },
+  "tamarind":{ name:"Tamarind", status:"ok", detail:"Natural fruit. Safe." },
+  "miso":{ name:"Miso", status:"warn", detail:"Fermented soy paste. High sodium. Contains beneficial probiotics." },
+  "fish sauce":{ name:"Fish Sauce", status:"warn", detail:"Very high sodium. Fish allergen." },
+  "oyster sauce":{ name:"Oyster Sauce", status:"warn", detail:"High sodium and sugar. Shellfish allergen." },
+  "worcestershire sauce":{ name:"Worcestershire Sauce", status:"warn", detail:"High sodium. Contains fish (anchovies)." },
+  "msg free":{ name:"MSG-free", status:"ok", detail:"Label claim — product does not contain added MSG." },
+  "sodium chloride":{ name:"Sodium Chloride (Salt)", status:"warn", detail:"Common salt. High intake linked to high blood pressure." },
+  "rock salt":{ name:"Rock Salt", status:"warn", detail:"Unrefined salt. Same sodium concerns as regular salt." },
+  "himalayan salt":{ name:"Himalayan Salt", status:"warn", detail:"Pink mineral salt. Same sodium concerns as regular salt despite marketing claims." },
+  "sea salt":{ name:"Sea Salt", status:"warn", detail:"Same sodium concerns as regular salt." },
+  "reduced fat":{ name:"Reduced Fat", status:"ok", detail:"Label claim indicating lower fat content than standard version." },
+  "low sodium":{ name:"Low Sodium", status:"ok", detail:"Reduced sodium content — beneficial for those managing blood pressure." },
+  "organic":{ name:"Organic", status:"ok", detail:"Grown without synthetic pesticides or fertilisers." },
+  "non-gmo":{ name:"Non-GMO", status:"ok", detail:"Not genetically modified. Generally safe either way." },
+  "whole grain":{ name:"Whole Grain", status:"ok", detail:"Contains whole grain — more nutritious than refined grain." },
+  "enriched flour":{ name:"Enriched Flour", status:"ok", detail:"Flour with added vitamins and minerals to replace those lost in milling." },
+  "bleached flour":{ name:"Bleached Flour", status:"warn", detail:"Chemically whitened flour. Nutritionally inferior to unbleached." },
+  "unbleached flour":{ name:"Unbleached Flour", status:"ok", detail:"Naturally aged flour. Preferred over bleached." },
+  "self-raising flour":{ name:"Self-raising Flour", status:"ok", detail:"Flour with added leavening. Safe." },
+  "baking powder":{ name:"Baking Powder", status:"ok", detail:"Leavening agent. Generally safe." },
+  "cream of tartar":{ name:"Cream of Tartar", status:"ok", detail:"Natural potassium salt. Safe." },
+  "cocoa butter":{ name:"Cocoa Butter", status:"ok", detail:"Natural fat from cocoa beans. Safe." },
+  "cocoa powder":{ name:"Cocoa Powder", status:"ok", detail:"Rich in antioxidants. Beneficial in moderation." },
+  "dark chocolate":{ name:"Dark Chocolate", status:"ok", detail:"Rich in antioxidants. Beneficial in moderation." },
+  "milk chocolate":{ name:"Milk Chocolate", status:"warn", detail:"High in sugar and saturated fat. Moderation." },
+  "white chocolate":{ name:"White Chocolate", status:"warn", detail:"High in sugar and fat. No cocoa antioxidants. Moderation." },
+  "carob":{ name:"Carob", status:"ok", detail:"Natural chocolate alternative. Safe. Naturally sweet." },
+  "peppermint extract":{ name:"Peppermint Extract", status:"ok", detail:"Natural flavouring. Safe." },
+  "lemon extract":{ name:"Lemon Extract", status:"ok", detail:"Natural flavouring. Safe." },
+  "orange extract":{ name:"Orange Extract", status:"ok", detail:"Natural flavouring. Safe." },
+  "almond extract":{ name:"Almond Extract", status:"ok", detail:"Natural flavouring. Safe." },
+  "vanilla extract":{ name:"Vanilla Extract", status:"ok", detail:"Natural flavouring. Safe." },
+  "vanilla bean":{ name:"Vanilla Bean", status:"ok", detail:"Natural spice. Safe." },
+  "vanilla flavour":{ name:"Vanilla Flavour", status:"ok", detail:"May be natural or artificial. Generally safe." },
+  "food starch":{ name:"Food Starch", status:"ok", detail:"Natural starch thickener. Safe." },
+  "arrowroot":{ name:"Arrowroot", status:"ok", detail:"Natural starch. Gluten-free. Safe." },
+  "kudzu starch":{ name:"Kudzu Starch", status:"ok", detail:"Natural starch. Safe." },
+  "potato flour":{ name:"Potato Flour", status:"ok", detail:"Gluten-free flour. Safe." },
+  "sago":{ name:"Sago", status:"ok", detail:"Natural starch from palm. Gluten-free. Safe." },
+  "tofu":{ name:"Tofu", status:"ok", detail:"Soy protein food. Good plant protein. Soy allergen." },
+  "tempeh":{ name:"Tempeh", status:"ok", detail:"Fermented soy. Excellent protein. Beneficial probiotics." },
+  "edamame":{ name:"Edamame", status:"ok", detail:"Young soy beans. Excellent plant protein." },
+  "natto":{ name:"Natto", status:"ok", detail:"Fermented soy. Excellent Vitamin K2 source. Soy allergen." },
+  "quorn":{ name:"Quorn (Mycoprotein)", status:"ok", detail:"Fungal protein. Good meat alternative. Safe for most." },
+  "seitan":{ name:"Seitan", status:"warn", detail:"Wheat gluten. Good plant protein but avoid with coeliac disease." },
+});
+
+
+// ══════════════════════════════════════════════════════════════
+// COMPLETE EU E-NUMBER LIST + HIGH-FREQUENCY NATURAL INGREDIENTS
+// Based on official EU Regulation 1333/2008 (updated Jan 2024)
+// Covers 100% of all EU-approved E-numbers + top natural ingredients
+// ══════════════════════════════════════════════════════════════
+Object.assign(INGREDIENT_DB, {
+
+  // ── MISSING E-NUMBERS FROM OFFICIAL EU LIST ──────────────────
+
+  // Colours
+  "101a":{ name:"Riboflavin-5-phosphate (E101a)", status:"ok", detail:"Active form of Vitamin B2 used as yellow colour. Safe and nutritionally beneficial." },
+
+  // Preservatives
+  "201":{ name:"Sodium sorbate (E201)", status:"ok", detail:"Preservative. Safe at approved levels. EFSA: no safety concerns." },
+  "203":{ name:"Calcium sorbate (E203)", status:"ok", detail:"Preservative. Removed from EU approved list in 2018 but still found in older products. Generally safe." },
+  "213":{ name:"Calcium benzoate (E213)", status:"warn", detail:"Preservative. Same benzene-formation risk as sodium benzoate when combined with Vitamin C. EFSA low ADI." },
+  "214":{ name:"Ethyl p-hydroxybenzoate (E214)", status:"bad", detail:"Paraben preservative. EFSA: endocrine disrupting properties. EU permits only in very limited uses." },
+  "215":{ name:"Sodium ethyl p-hydroxybenzoate (E215)", status:"bad", detail:"Paraben preservative. Endocrine disruptor. Very restricted in EU. Best avoided." },
+  "219":{ name:"Sodium methyl p-hydroxybenzoate (E219)", status:"bad", detail:"Paraben preservative. Endocrine disruptor. Extremely limited EU use. Avoid." },
+  "226":{ name:"Calcium sulphite (E226)", status:"warn", detail:"Sulphite preservative. Can cause asthma attacks in sulphite-sensitive individuals." },
+  "227":{ name:"Calcium hydrogen sulphite (E227)", status:"warn", detail:"Sulphite preservative. Asthma and allergy trigger. Restricted use in EU." },
+  "243":{ name:"Ethyl lauroyl arginate (E243)", status:"ok", detail:"Antimicrobial preservative. EFSA (2014): safe at approved levels. Used in surface treatment of meat and chewing gum." },
+  "246":{ name:"Glycolipids (E246)", status:"ok", detail:"Natural antimicrobial from fermentation. Added to EU list 2022. Safe." },
+  "267":{ name:"Buffered vinegar (E267)", status:"ok", detail:"Natural preservative. Added to EU list 2023. Combination of acetic acid and sodium acetate. Safe." },
+  "284":{ name:"Boric acid (E284)", status:"warn", detail:"Preservative permitted only for sturgeon caviar in EU. Toxic at high levels. Restricted to very specific use." },
+  "285":{ name:"Sodium tetraborate/Borax (E285)", status:"warn", detail:"Preservative for caviar only. Can be toxic in excess. Banned in USA for food use." },
+
+  // Antioxidants
+  "304":{ name:"Fatty acid esters of ascorbic acid (E304)", status:"ok", detail:"Fat-soluble Vitamin C derivative. Safe antioxidant. EFSA: no safety concerns." },
+  "308":{ name:"Gamma-tocopherol (E308)", status:"ok", detail:"Vitamin E form. Safe and beneficial." },
+  "309":{ name:"Delta-tocopherol (E309)", status:"ok", detail:"Vitamin E form. Safe and beneficial." },
+  "322a":{ name:"Oat lecithin (E322a)", status:"ok", detail:"Natural emulsifier from oats. Added to EU list 2022. Safe. Suitable for soy-sensitive individuals." },
+  "335":{ name:"Sodium tartrates (E335)", status:"ok", detail:"Salts of tartaric acid. Safe acidity regulators." },
+  "336":{ name:"Potassium tartrates (E336)", status:"ok", detail:"Cream of tartar. Natural. Safe." },
+  "337":{ name:"Sodium potassium tartrate (E337)", status:"ok", detail:"Rochelle salt. Natural acidity regulator. Safe." },
+  "345":{ name:"Trimagnesium dicitrate (E345)", status:"ok", detail:"Magnesium supplement and acidity regulator. Added to EU list 2024. Safe." },
+  "350":{ name:"Sodium malates (E350)", status:"ok", detail:"Salts of malic acid. Acidity regulators. Safe." },
+  "351":{ name:"Potassium malate (E351)", status:"ok", detail:"Salt of malic acid. Acidity regulator. Safe." },
+  "392":{ name:"Extracts of rosemary (E392)", status:"ok", detail:"Natural antioxidant from rosemary. EFSA (2015): safe at approved levels. Beneficial." },
+
+  // Thickeners/emulsifiers
+  "423":{ name:"Octenyl succinic acid modified gum arabic (E423)", status:"ok", detail:"Modified natural gum. EFSA: safe at current uses." },
+  "456":{ name:"Potassium polyaspartate (E456)", status:"ok", detail:"Stabiliser in wine. Added to EU list 2017. Safe." },
+  "459":{ name:"Beta-cyclodextrin (E459)", status:"ok", detail:"Encapsulating agent. EFSA: acceptable at approved levels. Used to encapsulate flavours." },
+  "463a":{ name:"Low-substituted hydroxypropyl cellulose (E463a)", status:"ok", detail:"Modified cellulose. Added to EU list 2018. Safe." },
+  "468":{ name:"Cross-linked sodium carboxymethyl cellulose (E468)", status:"ok", detail:"Modified cellulose. Safe." },
+  "469":{ name:"Enzymatically hydrolysed carboxymethyl cellulose (E469)", status:"ok", detail:"Modified cellulose. Safe." },
+  "470a":{ name:"Sodium/potassium/calcium salts of fatty acids (E470a)", status:"ok", detail:"Salts of natural fatty acids. Safe emulsifiers and anti-caking agents." },
+  "470b":{ name:"Magnesium salts of fatty acids (E470b)", status:"ok", detail:"Magnesium stearate and similar. Safe anti-caking and release agent." },
+  "499":{ name:"Stigmasterol-rich plant sterols (E499)", status:"ok", detail:"Plant sterols. Added to EU list 2013. Safe. May help lower cholesterol." },
+
+  // Mineral salts
+  "534":{ name:"Iron tartrate (E534)", status:"ok", detail:"Iron supplement and acidity regulator. Added to EU list 2015. Safe." },
+  "555":{ name:"Potassium aluminium silicate (E555)", status:"warn", detail:"Anti-caking agent. Contains aluminium — EFSA tightened all aluminium additive limits in 2022 due to neurotoxicity. Low bioavailability but still concerning with high total aluminium exposure." },
+  "574":{ name:"Gluconic acid (E574)", status:"ok", detail:"Natural acid found in honey and wine. Safe acidity regulator." },
+  "585":{ name:"Ferrous lactate (E585)", status:"ok", detail:"Iron supplement and colour stabiliser. Safe." },
+  "586":{ name:"4-Hexylresorcinol (E586)", status:"ok", detail:"Anti-browning agent for crustaceans. EFSA: safe at approved levels." },
+
+  // Flavour enhancers
+  "628":{ name:"Dipotassium guanylate (E628)", status:"warn", detail:"Flavour enhancer. Avoid with gout. Often used with MSG to amplify flavour." },
+  "629":{ name:"Calcium guanylate (E629)", status:"warn", detail:"Flavour enhancer. Not suitable for gout sufferers." },
+  "630":{ name:"Inosinic acid (E630)", status:"warn", detail:"Flavour enhancer. Not suitable for gout. Often combined with MSG." },
+  "632":{ name:"Dipotassium inosinate (E632)", status:"warn", detail:"Flavour enhancer. Avoid with gout." },
+  "633":{ name:"Calcium inosinate (E633)", status:"warn", detail:"Flavour enhancer. Avoid with gout." },
+  "634":{ name:"Calcium 5-ribonucleotides (E634)", status:"warn", detail:"Flavour enhancer blend. Not suitable for gout sufferers." },
+  "650":{ name:"Zinc acetate (E650)", status:"ok", detail:"Zinc supplement. Used as acidity regulator. Safe at food levels." },
+
+  // Sweeteners
+  "960a":{ name:"Steviol glycosides from Stevia (E960a)", status:"ok", detail:"Natural sweetener from stevia plant. Added to EU list 2021. Safe. Low glycaemic impact." },
+  "960c":{ name:"Enzymatically produced steviol glycosides (E960c)", status:"ok", detail:"Stevia-derived sweetener. Added to EU list 2021. Safe." },
+  "960d":{ name:"Glucosylated steviol glycosides (E960d)", status:"ok", detail:"Stevia-derived sweetener. Added to EU list 2023. Safe." },
+  "964":{ name:"Polyglycitol syrup (E964)", status:"warn", detail:"Sugar alcohol mixture. Laxative effect in large amounts. Mild digestive discomfort possible." },
+
+  // Glazing/misc
+  "907":{ name:"Hydrogenated poly-1-decene (E907)", status:"ok", detail:"Glazing agent in supplements. EFSA: safe at approved levels." },
+  "914":{ name:"Oxidised polyethylene wax (E914)", status:"ok", detail:"Glazing agent. Safe at food levels." },
+
+  // E1000s — enzymes and polymer additives
+  "1103":{ name:"Invertase (E1103)", status:"ok", detail:"Natural enzyme that splits sucrose. EFSA: safe. Used in confectionery." },
+  "1105":{ name:"Lysozyme (E1105)", status:"ok", detail:"Natural enzyme from egg white. Antimicrobial preservative in cheese. Safe. Egg allergen." },
+  "1200":{ name:"Polydextrose (E1200)", status:"ok", detail:"Soluble fibre and bulking agent. EFSA: safe. May have mild laxative effect in large amounts. Beneficial fibre." },
+  "1201":{ name:"Polyvinylpyrrolidone (E1201)", status:"ok", detail:"Stabiliser in supplements and wine. EFSA: safe at approved uses." },
+  "1202":{ name:"Polyvinylpolypyrrolidone (E1202)", status:"ok", detail:"Clarifying agent in beer and wine. EFSA: safe — not absorbed." },
+  "1203":{ name:"Polyvinyl alcohol (E1203)", status:"ok", detail:"Film coating for supplements. EFSA: safe — not absorbed." },
+  "1204":{ name:"Pullulan (E1204)", status:"ok", detail:"Natural polysaccharide from fermentation. Film-forming coating. EFSA: safe." },
+
+  // E1400s — modified starches
+  "1404":{ name:"Oxidised starch (E1404)", status:"ok", detail:"Modified food starch. EFSA: safe at approved levels." },
+  "1410":{ name:"Monostarch phosphate (E1410)", status:"ok", detail:"Modified food starch. Safe thickener." },
+  "1412":{ name:"Distarch phosphate (E1412)", status:"ok", detail:"Modified food starch. Safe thickener and stabiliser." },
+  "1413":{ name:"Phosphated distarch phosphate (E1413)", status:"ok", detail:"Modified food starch. Safe." },
+  "1414":{ name:"Acetylated distarch phosphate (E1414)", status:"ok", detail:"Modified food starch. Safe thickener." },
+  "1420":{ name:"Acetylated starch (E1420)", status:"ok", detail:"Modified food starch. Safe." },
+  "1422":{ name:"Acetylated distarch adipate (E1422)", status:"ok", detail:"Modified food starch. Safe." },
+  "1440":{ name:"Hydroxypropyl starch (E1440)", status:"ok", detail:"Modified food starch. Safe thickener." },
+  "1442":{ name:"Hydroxypropyl distarch phosphate (E1442)", status:"ok", detail:"Modified food starch. Safe and widely used." },
+  "1450":{ name:"Starch sodium octenyl succinate (E1450)", status:"ok", detail:"Modified food starch used as emulsifier. Safe." },
+  "1451":{ name:"Acetylated oxidised starch (E1451)", status:"ok", detail:"Modified food starch. Safe." },
+  "1452":{ name:"Starch aluminium octenyl succinate (E1452)", status:"warn", detail:"Modified starch containing aluminium. EFSA: aluminium exposure concerns — tightened limits 2022." },
+
+  // E1500s — solvents and carriers
+  "1505":{ name:"Triethyl citrate (E1505)", status:"ok", detail:"Carrier solvent for flavourings. Safe." },
+  "1517":{ name:"Glyceryl diacetate / Diacetin (E1517)", status:"ok", detail:"Solvent for food flavourings. Safe at food levels." },
+  "1518":{ name:"Glyceryl triacetate / Triacetin (E1518)", status:"ok", detail:"Humectant and solvent. Safe." },
+  "1519":{ name:"Benzyl alcohol (E1519)", status:"warn", detail:"Solvent for flavourings. Safe at very low food levels but toxic at high doses. EU strictly limits use." },
+  "1520":{ name:"Propylene glycol (E1520)", status:"warn", detail:"Carrier solvent. EFSA: safe at current approved levels but not permitted in foods for infants/young children. Restrictions in EU on use levels." },
+  "1521":{ name:"Polyethylene glycol (E1521)", status:"ok", detail:"Coating agent for supplements. EFSA: safe at approved food levels." },
+
+  // ── HIGH-FREQUENCY NATURAL INGREDIENTS NOT YET COVERED ────────
+
+  // Dairy & proteins
+  "whole milk":{ name:"Whole Milk", status:"ok", detail:"Full-fat dairy. Good source of calcium, protein and vitamins. Avoid if lactose intolerant or dairy allergic." },
+  "full cream milk":{ name:"Full Cream Milk", status:"ok", detail:"Full-fat dairy. Nutritious. High in saturated fat — moderation for cardiovascular health." },
+  "condensed milk":{ name:"Condensed Milk", status:"warn", detail:"Very high in sugar and saturated fat. Treat as a sweetener, not a dairy staple." },
+  "evaporated milk":{ name:"Evaporated Milk", status:"ok", detail:"Concentrated dairy with less sugar than condensed milk. Good calcium source." },
+  "sour cream":{ name:"Sour Cream", status:"ok", detail:"Fermented dairy. Contains beneficial probiotics. High in saturated fat — moderation." },
+  "cream cheese":{ name:"Cream Cheese", status:"warn", detail:"High in saturated fat and often sodium. Moderate use." },
+  "ricotta":{ name:"Ricotta", status:"ok", detail:"Soft dairy cheese. Good protein and calcium source." },
+  "parmesan":{ name:"Parmesan", status:"ok", detail:"Hard cheese. Excellent calcium and protein. High sodium." },
+  "cheddar":{ name:"Cheddar Cheese", status:"ok", detail:"Good protein and calcium. High in saturated fat and sodium — moderation." },
+  "mozzarella":{ name:"Mozzarella", status:"ok", detail:"Soft cheese. Good protein and calcium." },
+  "egg whites":{ name:"Egg Whites", status:"ok", detail:"Excellent lean protein source. Allergen." },
+  "egg yolk":{ name:"Egg Yolk", status:"ok", detail:"Rich in nutrients — Vitamin D, choline, healthy fats." },
+  "dried egg":{ name:"Dried Egg", status:"ok", detail:"Concentrated egg protein. Allergen." },
+
+  // Grains & starches
+  "semolina":{ name:"Semolina", status:"ok", detail:"Coarse wheat flour. Contains gluten." },
+  "durum wheat":{ name:"Durum Wheat", status:"ok", detail:"Hard wheat used in pasta. Contains gluten." },
+  "oat flour":{ name:"Oat Flour", status:"ok", detail:"Nutritious gluten-free flour (if certified). High in fibre." },
+  "millet flour":{ name:"Millet Flour", status:"ok", detail:"Gluten-free nutritious grain flour." },
+  "sorghum flour":{ name:"Sorghum Flour", status:"ok", detail:"Gluten-free grain flour. Nutritious." },
+  "amaranth flour":{ name:"Amaranth Flour", status:"ok", detail:"Gluten-free. High protein pseudo-grain." },
+  "quinoa":{ name:"Quinoa", status:"ok", detail:"Complete protein grain. Gluten-free. Highly nutritious." },
+  "pearl barley":{ name:"Pearl Barley", status:"ok", detail:"Processed barley. Contains gluten. Good fibre source." },
+  "rolled oats":{ name:"Rolled Oats", status:"ok", detail:"Whole grain. Excellent soluble fibre. May contain gluten from cross-contamination." },
+  "polenta":{ name:"Polenta (Corn Grits)", status:"ok", detail:"Gluten-free corn product. Safe." },
+  "couscous":{ name:"Couscous", status:"ok", detail:"Made from semolina. Contains gluten." },
+  "breadcrumbs":{ name:"Breadcrumbs", status:"ok", detail:"Contains gluten. Often has added salt and preservatives." },
+  "cracker crumbs":{ name:"Cracker Crumbs", status:"ok", detail:"Contains gluten. Check for added salt and palm oil." },
+
+  // Fats & oils
+  "interesterified fat":{ name:"Interesterified Fat", status:"warn", detail:"Chemically restructured fat used to replace trans fats. Emerging research suggests similar metabolic effects to trans fats — elevated LDL, lowered HDL." },
+  "fractionated palm oil":{ name:"Fractionated Palm Oil", status:"warn", detail:"Refined palm oil fraction. High in saturated fat. Environmental concerns." },
+  "palm kernel oil":{ name:"Palm Kernel Oil", status:"warn", detail:"Very high in saturated fat (82%). More saturated than palm oil. Linked to cardiovascular risk." },
+  "hydrogenated palm oil":{ name:"Hydrogenated Palm Oil", status:"bad", detail:"Contains trans fats. Banned in EU and many countries due to cardiovascular harm." },
+  "beef tallow":{ name:"Beef Tallow", status:"warn", detail:"Animal fat. High in saturated fat. Not suitable for many diets." },
+  "dripping":{ name:"Dripping", status:"warn", detail:"Rendered animal fat. High saturated fat. Not suitable for many diets." },
+
+  // Sugars & sweeteners
+  "golden syrup":{ name:"Golden Syrup", status:"warn", detail:"Inverted sugar syrup. High in sugar — same metabolic concerns as regular sugar." },
+  "caster sugar":{ name:"Caster Sugar", status:"warn", detail:"Fine white sugar. High sugar concerns — obesity, diabetes, tooth decay." },
+  "icing sugar":{ name:"Icing Sugar", status:"warn", detail:"Powdered sugar. High sugar. Often contains anti-caking starch." },
+  "raw sugar":{ name:"Raw Sugar", status:"warn", detail:"Minimally processed cane sugar. Same metabolic concerns as white sugar." },
+  "demerara sugar":{ name:"Demerara Sugar", status:"warn", detail:"Partially refined sugar with molasses. Same sugar concerns." },
+  "brown sugar":{ name:"Brown Sugar", status:"warn", detail:"White sugar with added molasses. Same metabolic concerns." },
+  "coconut sugar":{ name:"Coconut Sugar", status:"warn", detail:"Lower GI than table sugar but still high in sugar. Not a health food." },
+  "date sugar":{ name:"Date Sugar", status:"warn", detail:"Ground dried dates. Higher fibre than refined sugar but still very high in sugar." },
+  "date syrup":{ name:"Date Syrup", status:"warn", detail:"Natural sweetener but very high in sugar. Contains some minerals." },
+  "grape sugar":{ name:"Grape Sugar", status:"warn", detail:"Glucose/dextrose from grapes. High GI." },
+  "fruit juice concentrate":{ name:"Fruit Juice Concentrate", status:"warn", detail:"Concentrated fruit sugars. Despite being 'natural', behaves like added sugar metabolically." },
+  "apple juice concentrate":{ name:"Apple Juice Concentrate", status:"warn", detail:"Concentrated fruit sugar. Used as a sweetener — high natural sugar content." },
+  "glucose syrup":{ name:"Glucose Syrup", status:"warn", detail:"High GI sugar syrup. Rapidly raises blood sugar. Found in many confectionery products." },
+  "glucose-fructose syrup":{ name:"Glucose-Fructose Syrup", status:"warn", detail:"European equivalent of HFCS. Linked to obesity and metabolic syndrome at high intake." },
+  "fructose syrup":{ name:"Fructose Syrup", status:"warn", detail:"High fructose content — linked to fatty liver disease and insulin resistance." },
+  "isoglucose":{ name:"Isoglucose", status:"warn", detail:"EU name for high-fructose corn syrup. Same metabolic concerns." },
+
+  // Fruit & vegetable derivatives
+  "tomato":{ name:"Tomato", status:"ok", detail:"Nutritious. Rich in lycopene antioxidant. Safe." },
+  "apple":{ name:"Apple", status:"ok", detail:"Nutritious fruit. Good fibre and antioxidants." },
+  "banana":{ name:"Banana", status:"ok", detail:"Good potassium and energy source." },
+  "lemon":{ name:"Lemon", status:"ok", detail:"Vitamin C rich. Safe." },
+  "orange":{ name:"Orange", status:"ok", detail:"Excellent Vitamin C source." },
+  "lime":{ name:"Lime", status:"ok", detail:"Vitamin C source. Safe." },
+  "strawberry":{ name:"Strawberry", status:"ok", detail:"Rich in antioxidants and Vitamin C." },
+  "raspberry":{ name:"Raspberry", status:"ok", detail:"High in antioxidants and fibre." },
+  "blueberry":{ name:"Blueberry", status:"ok", detail:"Antioxidant-rich superfood." },
+  "mango":{ name:"Mango", status:"ok", detail:"Rich in Vitamin A and C." },
+  "pineapple":{ name:"Pineapple", status:"ok", detail:"Contains bromelain enzyme. Nutritious." },
+  "grape":{ name:"Grape", status:"ok", detail:"Antioxidant-rich. Contains resveratrol." },
+  "cherry":{ name:"Cherry", status:"ok", detail:"Rich in antioxidants. Safe." },
+  "peach":{ name:"Peach", status:"ok", detail:"Nutritious fruit. Safe." },
+  "pear":{ name:"Pear", status:"ok", detail:"Good fibre source." },
+  "plum":{ name:"Plum", status:"ok", detail:"Good fibre and antioxidants." },
+  "apricot":{ name:"Apricot", status:"ok", detail:"Rich in beta-carotene. Safe." },
+  "fig":{ name:"Fig", status:"ok", detail:"High in fibre and minerals." },
+  "date":{ name:"Date", status:"warn", detail:"Very high in natural sugar. Nutritious but consume in moderation." },
+  "raisin":{ name:"Raisin", status:"warn", detail:"Concentrated grape sugar. Nutritious but high in natural sugar." },
+  "sultana":{ name:"Sultana", status:"warn", detail:"Dried grape. High natural sugar." },
+  "cranberry":{ name:"Cranberry", status:"ok", detail:"Rich in antioxidants. Good for urinary health. Often high in added sugar when processed." },
+  "pomegranate":{ name:"Pomegranate", status:"ok", detail:"Powerful antioxidant. Anti-inflammatory. Safe." },
+  "avocado":{ name:"Avocado", status:"ok", detail:"Excellent healthy monounsaturated fats. Rich in potassium and folate." },
+  "spinach":{ name:"Spinach", status:"ok", detail:"Nutritious leafy green. Rich in iron, folate, vitamins." },
+  "kale":{ name:"Kale", status:"ok", detail:"Nutrient-dense leafy green. Excellent source of Vitamins K, A, C." },
+  "broccoli":{ name:"Broccoli", status:"ok", detail:"Excellent source of Vitamin C, K, fibre. Anti-cancer compounds." },
+  "sweet potato":{ name:"Sweet Potato", status:"ok", detail:"High in beta-carotene and fibre. Nutritious." },
+  "pumpkin":{ name:"Pumpkin", status:"ok", detail:"High in beta-carotene. Nutritious." },
+  "pea":{ name:"Pea", status:"ok", detail:"Good plant protein and fibre source." },
+  "lentil":{ name:"Lentil", status:"ok", detail:"Excellent plant protein and fibre. Rich in iron and folate." },
+  "chickpea":{ name:"Chickpea", status:"ok", detail:"Excellent plant protein, fibre and minerals." },
+  "kidney bean":{ name:"Kidney Bean", status:"ok", detail:"Excellent plant protein and fibre. Must be cooked thoroughly." },
+  "black bean":{ name:"Black Bean", status:"ok", detail:"Excellent plant protein and fibre." },
+  "pinto bean":{ name:"Pinto Bean", status:"ok", detail:"Good plant protein and fibre." },
+  "navy bean":{ name:"Navy Bean", status:"ok", detail:"Good plant protein and fibre." },
+  "cannellini bean":{ name:"Cannellini Bean", status:"ok", detail:"Good plant protein and fibre." },
+  "soybean":{ name:"Soybean", status:"ok", detail:"Complete plant protein. Common allergen. Phytoestrogens safe at food levels." },
+  "mung bean":{ name:"Mung Bean", status:"ok", detail:"Nutritious legume. High protein and fibre." },
+  "broad bean":{ name:"Broad Bean (Fava)", status:"ok", detail:"Good plant protein. Common allergen in Mediterranean populations." },
+  "lupin":{ name:"Lupin", status:"warn", detail:"Legume flour increasingly used in gluten-free products. EU-declared allergen. Avoid with peanut allergy (cross-reactivity possible)." },
+  "hemp seed":{ name:"Hemp Seed", status:"ok", detail:"Complete protein. Excellent omega-3 and omega-6 balance. Legal food use. Safe." },
+  "pumpkin seed":{ name:"Pumpkin Seed", status:"ok", detail:"Nutritious seed. Good zinc, magnesium, and protein source." },
+  "pine nut":{ name:"Pine Nut", status:"ok", detail:"Nutritious tree nut. Good source of healthy fats. Tree nut allergen." },
+  "hazelnut":{ name:"Hazelnut", status:"ok", detail:"Nutritious tree nut. Rich in Vitamin E. Tree nut allergen." },
+  "macadamia":{ name:"Macadamia Nut", status:"ok", detail:"High in healthy monounsaturated fats. Tree nut allergen." },
+  "pistachio":{ name:"Pistachio", status:"ok", detail:"Nutritious nut. Good protein and antioxidants. Tree nut allergen." },
+  "brazil nut":{ name:"Brazil Nut", status:"warn", detail:"Excellent selenium source but very high — more than 2-3 per day risks selenium toxicity. Tree nut allergen." },
+  "pecan":{ name:"Pecan", status:"ok", detail:"Nutritious nut. Rich in antioxidants. Tree nut allergen." },
+  "chestnut":{ name:"Chestnut", status:"ok", detail:"Lower fat nut. Good carbohydrate source. Tree nut allergen." },
+  "tahini":{ name:"Tahini (Sesame Paste)", status:"ok", detail:"Excellent calcium, protein and healthy fat source. Sesame allergen." },
+  "hummus":{ name:"Hummus", status:"ok", detail:"Chickpea and tahini blend. Nutritious. Contains sesame and chickpea allergens." },
+
+  // Meat, fish & seafood
+  "chicken":{ name:"Chicken", status:"ok", detail:"Lean protein. Nutritious. Safe when cooked properly." },
+  "beef":{ name:"Beef", status:"warn", detail:"Red meat. Good protein and iron. High saturated fat. WHO: processed and red meat linked to colorectal cancer risk with high consumption." },
+  "pork":{ name:"Pork", status:"warn", detail:"Red/white meat. Good protein. Higher saturated fat than chicken. Moderate consumption." },
+  "lamb":{ name:"Lamb", status:"warn", detail:"Red meat. Higher saturated fat. Moderate consumption." },
+  "turkey":{ name:"Turkey", status:"ok", detail:"Lean poultry. Excellent protein source." },
+  "salmon":{ name:"Salmon", status:"ok", detail:"Excellent source of omega-3 fatty acids. Beneficial for cardiovascular health." },
+  "tuna":{ name:"Tuna", status:"warn", detail:"Good protein and omega-3. However, contains mercury — limit to 2-3 servings per week. Pregnant women should limit further." },
+  "cod":{ name:"Cod", status:"ok", detail:"Lean fish. Good protein source. Safe." },
+  "sardine":{ name:"Sardine", status:"ok", detail:"Excellent omega-3. High in calcium when canned with bones. Very nutritious." },
+  "anchovy":{ name:"Anchovy", status:"warn", detail:"Very high in sodium. Good omega-3 and umami. Fish allergen." },
+  "prawns":{ name:"Prawns/Shrimp", status:"ok", detail:"Lean protein. Low fat. High cholesterol but dietary cholesterol impact is minimal. Shellfish allergen." },
+  "crab":{ name:"Crab", status:"ok", detail:"Good protein. Shellfish allergen." },
+  "lobster":{ name:"Lobster", status:"ok", detail:"Lean protein. Shellfish allergen." },
+  "squid":{ name:"Squid (Calamari)", status:"ok", detail:"Good lean protein. Mollusc allergen." },
+  "oyster":{ name:"Oyster", status:"ok", detail:"Excellent zinc source. Shellfish allergen." },
+  "mussel":{ name:"Mussel", status:"ok", detail:"Good protein and iron. Mollusc allergen." },
+  "beef extract":{ name:"Beef Extract", status:"warn", detail:"Concentrated meat extract. Very high sodium. High in glutamates." },
+  "chicken extract":{ name:"Chicken Extract", status:"warn", detail:"Concentrated chicken flavour. Very high sodium." },
+  "meat extract":{ name:"Meat Extract", status:"warn", detail:"Concentrated meat stock. Very high sodium." },
+  "bone broth":{ name:"Bone Broth", status:"ok", detail:"Nutritious collagen-rich stock. Good minerals. Check sodium content." },
+  "gelatin":{ name:"Gelatin", status:"ok", detail:"Animal protein from bones/connective tissue. Safe but not vegan/vegetarian." },
+
+  // Beverages & common liquid ingredients
+  "tea extract":{ name:"Tea Extract", status:"ok", detail:"Rich in antioxidants (catechins). Contains caffeine. Beneficial." },
+  "coffee extract":{ name:"Coffee Extract", status:"warn", detail:"Contains caffeine. Beneficial antioxidants. Limit in pregnancy and for children." },
+  "green tea extract":{ name:"Green Tea Extract", status:"ok", detail:"Concentrated antioxidants (EGCG). Safe at food levels. Contains caffeine." },
+  "cocoa extract":{ name:"Cocoa Extract", status:"ok", detail:"Rich in flavonoids. Anti-inflammatory. Beneficial." },
+  "fruit juice":{ name:"Fruit Juice", status:"warn", detail:"High in natural sugars with limited fibre. Better to eat whole fruit. High GI." },
+  "vegetable juice":{ name:"Vegetable Juice", status:"ok", detail:"Nutritious but check sodium content." },
+  "coconut water":{ name:"Coconut Water", status:"ok", detail:"Natural electrolytes. Low calorie. Safe." },
+  "coconut milk":{ name:"Coconut Milk", status:"warn", detail:"High in saturated fat. Limit intake for cardiovascular health." },
+  "almond milk":{ name:"Almond Milk", status:"ok", detail:"Low calorie dairy alternative. Check for added sugar. Low protein." },
+  "oat milk":{ name:"Oat Milk", status:"ok", detail:"Dairy alternative. Contains gluten unless certified GF. Check for added sugar." },
+  "soy milk":{ name:"Soy Milk", status:"ok", detail:"Good plant protein dairy alternative. Soy allergen." },
+  "rice milk":{ name:"Rice Milk", status:"warn", detail:"Dairy alternative. High in natural sugars. Very low protein. May contain trace inorganic arsenic." },
+
+  // Condiments & sauces
+  "tomato sauce":{ name:"Tomato Sauce/Ketchup", status:"warn", detail:"High in sugar and sodium. Lycopene from tomatoes is beneficial but check sugar content." },
+  "mayonnaise":{ name:"Mayonnaise", status:"warn", detail:"Very high in fat and often sodium. Moderate use." },
+  "mustard":{ name:"Mustard", status:"ok", detail:"Natural condiment. EU-declared allergen. Anti-inflammatory compounds. Generally safe." },
+  "horseradish":{ name:"Horseradish", status:"ok", detail:"Natural condiment. Anti-inflammatory. Safe." },
+  "chilli sauce":{ name:"Chilli Sauce", status:"warn", detail:"Check sodium and sugar content. Capsaicin beneficial." },
+  "barbecue sauce":{ name:"Barbecue Sauce", status:"warn", detail:"High in sugar and sodium. Use sparingly." },
+  "teriyaki sauce":{ name:"Teriyaki Sauce", status:"warn", detail:"Very high in sodium and sugar." },
+  "hoisin sauce":{ name:"Hoisin Sauce", status:"warn", detail:"High in sodium and sugar." },
+  "tahini":{ name:"Tahini", status:"ok", detail:"Sesame paste. Good healthy fats and calcium. Sesame allergen." },
+  "pesto":{ name:"Pesto", status:"ok", detail:"Nutritious blend of basil, pine nuts, olive oil. Contains tree nut allergen." },
+
+  // Processing & functional ingredients
+  "cultures":{ name:"Bacterial Cultures", status:"ok", detail:"Beneficial fermentation bacteria. Probiotic. Safe and beneficial for gut health." },
+  "starter cultures":{ name:"Starter Cultures", status:"ok", detail:"Live beneficial bacteria for fermentation. Safe and beneficial." },
+  "rennet":{ name:"Rennet", status:"ok", detail:"Enzyme used in cheesemaking. Safe. May be animal or microbial sourced." },
+  "enzyme":{ name:"Enzyme (unspecified)", status:"ok", detail:"Processing enzyme. Generally safe — typically not present in significant amounts in finished product." },
+  "microbial enzyme":{ name:"Microbial Enzyme", status:"ok", detail:"Fermentation-derived processing enzyme. Safe." },
+  "amylase":{ name:"Amylase", status:"ok", detail:"Natural starch-digesting enzyme. Safe." },
+  "lipase":{ name:"Lipase", status:"ok", detail:"Fat-digesting enzyme. Safe." },
+  "protease":{ name:"Protease", status:"ok", detail:"Protein-digesting enzyme. Safe." },
+  "lactase":{ name:"Lactase", status:"ok", detail:"Lactose-digesting enzyme. Safe and beneficial for lactose-intolerant individuals." },
+  "transglutaminase":{ name:"Transglutaminase", status:"warn", detail:"Enzyme used to bind meat pieces together ('meat glue'). EFSA: safe but consumer concern about processed meat appearance." },
+  "nitrogen":{ name:"Nitrogen (gas)", status:"ok", detail:"Inert packaging gas (E941). Preserves freshness. Safe." },
+  "carbon dioxide":{ name:"Carbon Dioxide (gas)", status:"ok", detail:"Carbonation and packaging gas (E290). Safe." },
+  "water":{ name:"Water", status:"ok", detail:"Essential. Safe." },
+  "spring water":{ name:"Spring Water", status:"ok", detail:"Natural water source. Safe." },
+  "mineral water":{ name:"Mineral Water", status:"ok", detail:"Natural mineral-rich water. Safe." },
+  "distilled water":{ name:"Distilled Water", status:"ok", detail:"Purified water. Safe." },
+
+  // Allergens specifically
+  "sesame":{ name:"Sesame", status:"ok", detail:"EU-declared allergen (since 2023). Good calcium and healthy fat source. Safe for most people." },
+  "sesame oil":{ name:"Sesame Oil", status:"ok", detail:"Heart-healthy oil. Rich in antioxidants. Sesame allergen." },
+  "sesame paste":{ name:"Sesame Paste", status:"ok", detail:"Nutritious. Good fats and minerals. Sesame allergen." },
+  "gluten":{ name:"Gluten", status:"warn", detail:"Wheat protein. EU-declared allergen. Safe for most but causes serious illness in coeliac disease and wheat sensitivity." },
+  "celery":{ name:"Celery", status:"ok", detail:"EU-declared allergen. Nutritious vegetable. Safe for most people." },
+  "molluscs":{ name:"Molluscs", status:"ok", detail:"EU-declared allergen. Shellfish (squid, oyster, mussel etc.). Nutritious. Safe for most." },
+  "sulphites":{ name:"Sulphites/Sulphur Dioxide", status:"warn", detail:"EU-declared allergen at >10mg/kg. Can trigger asthma and allergic reactions in sensitive individuals." },
+
+  // Vitamins & minerals commonly added to food
+  "vitamin a":{ name:"Vitamin A (Retinol)", status:"ok", detail:"Essential vitamin. Beneficial. Added to many fortified foods." },
+  "vitamin b1":{ name:"Vitamin B1 (Thiamine)", status:"ok", detail:"Essential B vitamin. Safe." },
+  "vitamin b2":{ name:"Vitamin B2 (Riboflavin)", status:"ok", detail:"Essential B vitamin. Safe and beneficial." },
+  "vitamin b3":{ name:"Vitamin B3 (Niacin)", status:"ok", detail:"Essential B vitamin. Beneficial." },
+  "vitamin b5":{ name:"Vitamin B5 (Pantothenic acid)", status:"ok", detail:"Essential B vitamin. Beneficial." },
+  "vitamin b6":{ name:"Vitamin B6 (Pyridoxine)", status:"ok", detail:"Essential B vitamin. Safe at food levels." },
+  "vitamin b7":{ name:"Vitamin B7 (Biotin)", status:"ok", detail:"Essential B vitamin. Beneficial." },
+  "vitamin b9":{ name:"Vitamin B9 (Folate/Folic acid)", status:"ok", detail:"Essential vitamin. Especially important in pregnancy." },
+  "vitamin b12":{ name:"Vitamin B12 (Cobalamin)", status:"ok", detail:"Essential vitamin. Especially important for vegans." },
+  "vitamin c":{ name:"Vitamin C (Ascorbic acid)", status:"ok", detail:"Essential antioxidant vitamin. Beneficial." },
+  "vitamin d":{ name:"Vitamin D (Calciferol)", status:"ok", detail:"Essential vitamin. Beneficial for bones and immunity." },
+  "vitamin d2":{ name:"Vitamin D2 (Ergocalciferol)", status:"ok", detail:"Plant-based Vitamin D. Beneficial." },
+  "vitamin d3":{ name:"Vitamin D3 (Cholecalciferol)", status:"ok", detail:"Most bioavailable Vitamin D form. Beneficial." },
+  "vitamin e":{ name:"Vitamin E (Tocopherol)", status:"ok", detail:"Essential antioxidant vitamin. Beneficial." },
+  "vitamin k":{ name:"Vitamin K", status:"ok", detail:"Essential for blood clotting and bone health. Beneficial." },
+
+  // Minerals added to food
+  "calcium carbonate":{ name:"Calcium Carbonate", status:"ok", detail:"Calcium supplement (E170). Safe and beneficial." },
+  "magnesium oxide":{ name:"Magnesium Oxide", status:"ok", detail:"Magnesium supplement. Safe." },
+  "ferric pyrophosphate":{ name:"Ferric Pyrophosphate", status:"ok", detail:"Iron supplement. Safe. Used in fortified foods." },
+  "zinc sulphate":{ name:"Zinc Sulphate", status:"ok", detail:"Zinc supplement. Safe." },
+  "copper sulphate":{ name:"Copper Sulphate", status:"warn", detail:"Trace mineral supplement. Safe only at very low doses — toxic at high levels." },
+  "potassium iodide":{ name:"Potassium Iodide", status:"ok", detail:"Iodine supplement. Essential for thyroid health. Safe at food levels." },
+  "sodium fluoride":{ name:"Sodium Fluoride", status:"warn", detail:"Sometimes added to water/salt. Beneficial for dental health at low levels. Toxic at high doses." },
+  "chromium picolinate":{ name:"Chromium Picolinate", status:"warn", detail:"Trace mineral supplement. Safe at food levels. Some concerns about DNA damage at supplemental doses." },
+});
+
+// ══════════════════════════════════════════════════════════════
+// EU STANDARDS OVERRIDE (EFSA — European Food Safety Authority)
+// Applied on top of base database. Where EU is stricter than
+// global average, ratings are upgraded to warn/bad accordingly.
+// Source: EU Regulation (EC) No 1333/2008 on food additives
+//         + EFSA re-evaluations through 2024
+// ══════════════════════════════════════════════════════════════
+Object.assign(INGREDIENT_DB, {
+
+  // ── COLOURS ─────────────────────────────────────────────────
+  // EU requires warning label: "may have an adverse effect on
+  // activity and attention in children" for these 6 colours (Southampton 6)
+  "102":{ name:"Tartrazine (E102)", status:"bad", detail:"⚠️ EU requires warning label: 'may have an adverse effect on activity and attention in children.' Linked to hyperactivity. Banned in Norway." },
+  "104":{ name:"Quinoline Yellow (E104)", status:"bad", detail:"⚠️ EU requires hyperactivity warning label. Not approved in USA. EFSA advises avoidance in children." },
+  "110":{ name:"Sunset Yellow FCF (E110)", status:"bad", detail:"⚠️ EU requires hyperactivity warning label. Linked to allergic reactions and hyperactivity in children." },
+  "122":{ name:"Azorubine (E122)", status:"bad", detail:"⚠️ EU requires hyperactivity warning label. Banned in USA, Canada, Japan, Norway." },
+  "124":{ name:"Ponceau 4R (E124)", status:"bad", detail:"⚠️ EU requires hyperactivity warning label. Banned in USA and Canada." },
+  "129":{ name:"Allura Red AC (E129)", status:"bad", detail:"⚠️ EU requires hyperactivity warning label. EFSA flagged potential DNA damage in 2023 study. Avoid in children." },
+  // Additional colour rulings
+  "107":{ name:"Yellow 2G (E107)", status:"bad", detail:"Not permitted in EU since 1994. Possible carcinogen. Avoid." },
+  "128":{ name:"Red 2G (E128)", status:"bad", detail:"Banned in EU. Breaks down to aniline, a possible carcinogen." },
+  "123":{ name:"Amaranth (E123)", status:"bad", detail:"Banned in USA since 1976. EU restricts to caviar only. Possible carcinogen." },
+  "127":{ name:"Erythrosine (E127)", status:"bad", detail:"EU restricts to cocktail/candied cherries only. Very high iodine — thyroid disruption risk." },
+  "142":{ name:"Green S (E142)", status:"warn", detail:"Not approved in USA, Canada, Japan. EU permits but EFSA notes limited safety data. Avoid where possible." },
+  "151":{ name:"Brilliant Black BN (E151)", status:"warn", detail:"Not approved in USA or Canada. EU permits but EFSA flagged data gaps. Possible allergen." },
+  "155":{ name:"Brown HT (E155)", status:"warn", detail:"Not approved in USA, Canada, Japan, Australia. EU permits but with limited safety evidence." },
+  "160b":{ name:"Annatto (E160b)", status:"warn", detail:"EFSA (2020): acceptable daily intake set very low due to genotoxicity concerns. Can cause allergic reactions including urticaria." },
+  "171":{ name:"Titanium Dioxide (E171)", status:"bad", detail:"🚫 BANNED in EU food since August 2022. EFSA concluded it cannot be considered safe — possible genotoxin (DNA damage). Still allowed in Australia and USA." },
+  "173":{ name:"Aluminium (E173)", status:"bad", detail:"EU restricts to external decoration on confectionery only. EFSA: aluminium accumulates in body and is neurotoxic at high exposure." },
+
+  // ── PRESERVATIVES ────────────────────────────────────────────
+  "210":{ name:"Benzoic Acid (E210)", status:"warn", detail:"EU permits but EFSA (2016) set a low ADI. Combines with Vitamin C to form carcinogenic benzene. Banned in food for infants and toddlers in EU." },
+  "211":{ name:"Sodium Benzoate (E211)", status:"warn", detail:"EFSA (2016): low ADI. Forms benzene with Vitamin C. EU bans in baby foods. Hyperactivity link when combined with colours." },
+  "212":{ name:"Potassium Benzoate (E212)", status:"warn", detail:"Same concerns as sodium benzoate. EFSA low ADI. Benzene formation risk with Vitamin C." },
+  "216":{ name:"Propyl Paraben (E216)", status:"bad", detail:"🚫 BANNED in EU food since 2006. Endocrine disruptor — interferes with hormone system. Banned in food for infants and young children globally." },
+  "218":{ name:"Methyl Paraben (E218)", status:"bad", detail:"🚫 BANNED in EU food. Endocrine disruptor. Oestrogenic activity confirmed." },
+  "230":{ name:"Biphenyl (E230)", status:"bad", detail:"🚫 NOT permitted in EU. Fungicide used on citrus peel. Possible carcinogen. Banned in EU and Australia." },
+  "231":{ name:"Orthophenyl Phenol (E231)", status:"bad", detail:"🚫 NOT permitted in EU. Fungicide on citrus. IARC Group 3 carcinogen data. Restricted globally." },
+  "239":{ name:"Hexamethylene Tetramine (E239)", status:"bad", detail:"🚫 Banned in EU except Provolone cheese. Releases formaldehyde in acidic conditions — known carcinogen." },
+  "249":{ name:"Potassium Nitrite (E249)", status:"warn", detail:"EFSA (2017): ADI of only 0.07mg/kg/day. Forms carcinogenic nitrosamines especially when cooked. EU has set the lowest globally permitted levels for processed meats." },
+  "250":{ name:"Sodium Nitrite (E250)", status:"warn", detail:"EFSA (2017): very low ADI. Nitrosamines are Group 1 carcinogens (IARC). EU setting tightest global limits. Limit processed meat consumption." },
+  "251":{ name:"Sodium Nitrate (E251)", status:"warn", detail:"EFSA (2017): exposure often exceeds ADI in high processed-meat consumers. EU tightened limits 2023." },
+  "252":{ name:"Potassium Nitrate (E252)", status:"warn", detail:"Same nitrosamine concerns as sodium nitrate. EFSA tightened guidance." },
+
+  // ── ANTIOXIDANTS ─────────────────────────────────────────────
+  "310":{ name:"Propyl Gallate (E310)", status:"warn", detail:"EFSA (2014): possible endocrine disrupting properties. ADI set low at 0.5mg/kg/day. Avoid products with high levels." },
+  "311":{ name:"Octyl Gallate (E311)", status:"warn", detail:"EFSA flagged limited toxicological data. Possible allergen and endocrine disruptor." },
+  "312":{ name:"Dodecyl Gallate (E312)", status:"warn", detail:"EFSA: limited safety data. Possible endocrine disrupting properties." },
+  "319":{ name:"TBHQ (E319)", status:"warn", detail:"EFSA (2004): ADI of 0.7mg/kg/day. Not permitted in EU for baby foods. Immune function effects at higher doses. Not approved in Japan." },
+  "320":{ name:"BHA (E320)", status:"bad", detail:"🚫 EFSA: genotoxicity concerns — cannot rule out carcinogenicity. IARC Group 2B possible carcinogen. EU only permits very restricted use. Best completely avoided." },
+  "321":{ name:"BHT (E321)", status:"warn", detail:"EFSA (2012): ADI of 0.25mg/kg/day. Not permitted in EU baby foods. Some studies show tumour-promoting effects at high doses. Banned in Japan." },
+  "324":{ name:"Ethoxyquin (E324)", status:"bad", detail:"🚫 BANNED in EU food. Not permitted in Australia. Possible carcinogen and endocrine disruptor." },
+  "338":{ name:"Phosphoric Acid (E338)", status:"warn", detail:"EFSA (2019): total phosphate intake (from all sources) is a concern for kidney and bone health in high consumers. Especially concerning in cola drinks." },
+  "385":{ name:"Calcium Disodium EDTA (E385)", status:"warn", detail:"EFSA: may chelate essential minerals reducing their absorption. Not permitted in all food categories in EU." },
+  "386":{ name:"Disodium EDTA (E386)", status:"warn", detail:"EFSA: chelating agent — reduces absorption of zinc, iron and other minerals. Limited food use in EU." },
+
+  // ── THICKENERS & EMULSIFIERS ─────────────────────────────────
+  "407":{ name:"Carrageenan (E407)", status:"warn", detail:"EFSA (2018): re-evaluated and confirmed safety at current use levels, but noted gaps in data for infants. Some studies link to gut inflammation. EU prohibits in infant formula." },
+  "407a":{ name:"Processed Eucheuma Seaweed (E407a)", status:"warn", detail:"Similar concerns to carrageenan. EFSA: not permitted in infant or follow-on formula." },
+  "430":{ name:"Polyoxyethylene Stearate (E430)", status:"warn", detail:"EFSA flagged limited long-term safety data. Use restricted in EU." },
+  "431":{ name:"Polyoxyl Stearate (E431)", status:"warn", detail:"EFSA: limited data. Permitted only in specific food categories in EU." },
+  "432":{ name:"Polysorbate 20 (E432)", status:"warn", detail:"EFSA (2015): acceptable at current use levels but animal data shows gut microbiome disruption. Not for infant foods in EU." },
+  "433":{ name:"Polysorbate 80 (E433)", status:"warn", detail:"EFSA (2015): acceptable ADI but raised concerns at higher doses — gut lining disruption in animal studies. Not for infant foods." },
+  "434":{ name:"Polysorbate 40 (E434)", status:"warn", detail:"EFSA: same group concerns as other polysorbates. Restricted to specific uses in EU." },
+  "435":{ name:"Polysorbate 60 (E435)", status:"warn", detail:"EFSA: same concerns as E433. Animal studies show gut inflammation at high doses." },
+  "436":{ name:"Polysorbate 65 (E436)", status:"warn", detail:"EFSA: same concerns as other polysorbates. Restricted in EU." },
+  "466":{ name:"Carboxymethylcellulose (E466)", status:"warn", detail:"EFSA (2017): generally safe but animal studies at high doses show gut microbiome disruption and inflammation. Not for infant formula." },
+
+  // ── MINERAL SALTS ────────────────────────────────────────────
+  "520":{ name:"Aluminium Sulphate (E520)", status:"bad", detail:"EFSA (2011): total aluminium exposure often exceeds tolerable weekly intake. Neurotoxic at chronic high exposure. EU tightened limits significantly in 2022." },
+  "521":{ name:"Aluminium Sodium Sulphate (E521)", status:"bad", detail:"EFSA: aluminium accumulates in brain and bones. EU tightened all aluminium additive limits in 2022 due to neurotoxicity concerns." },
+  "522":{ name:"Aluminium Potassium Sulphate (E522)", status:"bad", detail:"EFSA: neurotoxicity concerns. EU limits tightened 2022. Exposure from this and other aluminium additives combined often exceeds safe levels." },
+  "523":{ name:"Aluminium Ammonium Sulphate (E523)", status:"bad", detail:"EFSA neurotoxicity concerns. EU limits tightened 2022. Best avoided." },
+  "541":{ name:"Sodium Aluminium Phosphate (E541)", status:"bad", detail:"EFSA: aluminium-containing additive — neurotoxicity at chronic high exposure. EU limit tightened 2022." },
+  "554":{ name:"Sodium Aluminosilicate (E554)", status:"warn", detail:"EFSA: low bioavailability of aluminium from silicate form, but EU still tightened guidance on all aluminium additives in 2022." },
+  "553b":{ name:"Talc (E553b)", status:"warn", detail:"EFSA (2018): raised concerns about potential contamination with asbestiform fibres. EU limits its use and requires purity specifications." },
+
+  // ── FLAVOUR ENHANCERS ─────────────────────────────────────────
+  "621":{ name:"MSG (E621)", status:"warn", detail:"EFSA (2017): set ADI of 30mg/kg/day — much lower than previous estimates. At high intakes may cause transient symptoms. EU prohibits in baby and toddler foods." },
+  "627":{ name:"Disodium Guanylate (E627)", status:"warn", detail:"EFSA: same group concerns as MSG. Not permitted in EU foods for infants, toddlers, or young children. Avoid with gout." },
+  "631":{ name:"Disodium Inosinate (E631)", status:"warn", detail:"EFSA: not permitted in EU baby/toddler foods. Gout risk. Often amplifies MSG effects." },
+  "635":{ name:"Disodium 5-Ribonucleotides (E635)", status:"warn", detail:"EFSA: not permitted in EU foods for young children. 'Ribo rash' — itchy skin reaction — well documented. More potent than MSG alone." },
+
+  // ── SWEETENERS ───────────────────────────────────────────────
+  "950":{ name:"Acesulfame K (E950)", status:"warn", detail:"EFSA (2000, under re-evaluation 2024): current ADI 9mg/kg/day. Some animal studies suggest effects on gut bacteria and insulin response. EU requires labelling 'with sweetener(s)'." },
+  "951":{ name:"Aspartame (E951)", status:"warn", detail:"EFSA (2023): confirmed safe at ADI of 40mg/kg/day BUT IARC simultaneously classified as Group 2B possible carcinogen. EU requires 'contains a source of phenylalanine' label. Avoid in PKU and pregnancy." },
+  "952":{ name:"Cyclamate (E952)", status:"warn", detail:"EU permits up to 250mg/day. Banned in USA since 1969 due to cancer link (not confirmed in later studies). EFSA re-evaluation ongoing. Best limited." },
+  "954":{ name:"Saccharin (E954)", status:"warn", detail:"EFSA: acceptable at current ADI (5mg/kg/day). EU requires 'with sweetener(s)' label. Some studies link to gut microbiome disruption. Avoid in pregnancy — crosses placenta." },
+  "955":{ name:"Sucralose (E955)", status:"warn", detail:"EFSA: currently acceptable but under review after 2023 studies showing DNA damage (genotoxicity) at doses below ADI. Belgium and some EU member states urged review. Caution advised." },
+  "961":{ name:"Neotame (E961)", status:"warn", detail:"EFSA: very high potency sweetener. Limited long-term human data. EU requires 'with sweetener(s)' label." },
+  "969":{ name:"Advantame (E969)", status:"warn", detail:"EFSA (2013): acceptable but very limited real-world safety data. One of the newest sweeteners approved in EU." },
+
+  // ── GLAZING & MISC ───────────────────────────────────────────
+  "905":{ name:"Mineral Oil (E905)", status:"bad", detail:"🚫 EFSA (2012): mineral oil hydrocarbons (MOH) accumulate in human tissue and are potentially carcinogenic. EU heavily restricts use and has proposed further bans. Best avoided entirely." },
+  "920":{ name:"L-Cysteine (E920)", status:"warn", detail:"EFSA: safe at food levels. EU requires declaration if derived from human hair (rare) or feathers. Not suitable for vegans or halal/kosher diets without verified source." },
+  "924":{ name:"Potassium Bromate (E924)", status:"bad", detail:"🚫 NOT permitted in EU. Banned in EU, Australia, Canada, UK. IARC Group 2B possible carcinogen. Still legal in USA as GRAS." },
+  "925":{ name:"Chlorine (E925)", status:"bad", detail:"🚫 NOT permitted in EU as flour treatment. Banned for this use throughout EU. Destroys nutrients and may form chlorinated compounds." },
+  "926":{ name:"Chlorine Dioxide (E926)", status:"bad", detail:"🚫 NOT permitted in EU as flour treatment. EU banned this use due to nutrient destruction and potential toxic by-products." },
+  "927a":{ name:"Azodicarbonamide (E927a)", status:"bad", detail:"🚫 BANNED in EU and Australia. Breaks down to semicarbazide — a genotoxic possible carcinogen. Still used as a dough conditioner in USA. Avoid completely." },
+  "928":{ name:"Benzoyl Peroxide (E928)", status:"bad", detail:"🚫 NOT permitted in EU as flour treatment. Bleaches flour by destroying beta-carotene and other nutrients. Banned in EU and many other countries." },
+
+  // ── NATURAL INGREDIENTS WITH EU-SPECIFIC NOTES ───────────────
+  "titanium dioxide":{ name:"Titanium Dioxide", status:"bad", detail:"🚫 BANNED in EU food since August 2022 following EFSA genotoxicity ruling. Still allowed in Australia and USA. Avoid." },
+  "partially hydrogenated oil":{ name:"Partially Hydrogenated Oil", status:"bad", detail:"🚫 BANNED in EU since 2021. Trans fat content. Strongly linked to heart disease and stroke. Also banned in USA since 2018 and in many other countries." },
+  "hydrogenated vegetable oil":{ name:"Hydrogenated Vegetable Oil", status:"bad", detail:"🚫 Partially hydrogenated forms banned in EU since 2021 due to trans fat content. Avoid completely." },
+  "high fructose corn syrup":{ name:"High Fructose Corn Syrup", status:"bad", detail:"Not directly banned in EU but rarely used due to glucose-fructose syrup restrictions. Strongly linked to obesity, fatty liver disease and metabolic syndrome." },
+  "potassium bromate":{ name:"Potassium Bromate", status:"bad", detail:"🚫 Banned in EU, Australia, Canada. IARC Group 2B carcinogen. Still legal in USA." },
+  "azodicarbonamide":{ name:"Azodicarbonamide", status:"bad", detail:"🚫 Banned in EU and Australia. Breaks down to semicarbazide — genotoxic possible carcinogen." },
+  "brominated vegetable oil":{ name:"Brominated Vegetable Oil", status:"bad", detail:"🚫 NOT permitted in EU. Banned in EU, Japan, India. The USA banned it in 2024 after decades of use. Bromine accumulates in body tissue." },
+  "carmine":{ name:"Carmine / Cochineal (E120)", status:"warn", detail:"EFSA (2015): can cause severe allergic reactions including anaphylaxis. EU requires labelling as 'cochineal', 'carminic acid' or 'carmines' — not just 'colour'. Not vegan." },
+  "quillaia extract":{ name:"Quillaia Extract (E999)", status:"warn", detail:"EFSA (2021): set a low ADI — current exposure may exceed it in high consumers of foamy drinks. EU restricts to specific beverages only." },
+  "carrageenan":{ name:"Carrageenan (E407)", status:"warn", detail:"EFSA (2018): safe at approved levels but prohibited in EU infant formula due to data gaps for this age group. Some studies link to gut inflammation." },
+  "bha":{ name:"BHA (E320)", status:"bad", detail:"🚫 EFSA: genotoxicity concerns — cannot rule out carcinogenicity. IARC Group 2B. EU only permits in very restricted uses at very low levels. Best completely avoided." },
+  "sodium nitrite":{ name:"Sodium Nitrite (E250)", status:"warn", detail:"EFSA (2017): ADI only 0.07mg/kg/day. EU tightening limits in processed meats. Nitrosamines formed during cooking are Group 1 carcinogens (IARC). Limit cured meat consumption." },
+  "acesulfame k":{ name:"Acesulfame K (E950)", status:"warn", detail:"EFSA under re-evaluation 2024. Animal studies suggest metabolic and gut microbiome effects. EU requires 'with sweetener(s)' label." },
+  "sucralose":{ name:"Sucralose (E955)", status:"warn", detail:"EFSA review ongoing after 2023 genotoxicity studies. EU requires 'with sweetener(s)' labelling. Caution advised until review complete." },
+  "aspartame":{ name:"Aspartame (E951)", status:"warn", detail:"EFSA (2023): safe at 40mg/kg ADI but IARC Group 2B possible carcinogen. EU requires phenylalanine warning. Avoid in PKU and pregnancy." },
+  "msg":{ name:"MSG (E621)", status:"warn", detail:"EFSA (2017): ADI set at 30mg/kg/day — much lower than previously thought safe. Prohibited in EU baby and toddler foods. High sodium." },
+});
+
+// ── EU STANDARD BADGE ─────────────────────────────────────────
+window.DB_STANDARD = "EU (EFSA)";
+window.DB_STANDARD_NOTE = "Ratings based on EU/EFSA standards — the strictest globally. 🇪🇺";
+
 </script>
 <style>
 :root{
@@ -461,6 +1343,30 @@ input[type=file]{display:none}
 .primary-btn:active{opacity:0.85}
 
 /* ── Loading ── */
+
+/* ── Crop overlay ── */
+.crop-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;
+  display:none;flex-direction:column;align-items:center;justify-content:space-between;
+  padding:env(safe-area-inset-top,16px) 0 env(safe-area-inset-bottom,16px)}
+.crop-overlay.open{display:flex}
+.crop-top-bar{width:100%;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.crop-title{font-size:15px;font-weight:500;color:#fff}
+.crop-cancel{background:none;border:none;color:#aaa;font-size:14px;cursor:pointer;font-family:var(--font)}
+.crop-canvas-wrap{position:relative;flex:1;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#crop-canvas{max-width:100%;max-height:100%;touch-action:none;cursor:crosshair}
+.crop-selection{position:absolute;border:2px solid #4ade80;box-shadow:0 0 0 9999px rgba(0,0,0,0.55);pointer-events:none}
+.crop-handle{position:absolute;width:18px;height:18px;background:#4ade80;border-radius:3px}
+.crop-handle.tl{top:-9px;left:-9px;cursor:nw-resize}
+.crop-handle.tr{top:-9px;right:-9px;cursor:ne-resize}
+.crop-handle.bl{bottom:-9px;left:-9px;cursor:sw-resize}
+.crop-handle.br{bottom:-9px;right:-9px;cursor:se-resize}
+.crop-bottom-bar{width:100%;padding:12px 16px;display:flex;gap:10px}
+.crop-btn-secondary{flex:1;padding:13px;background:rgba(255,255,255,0.1);color:#fff;
+  border:none;border-radius:var(--r);font-size:15px;font-family:var(--font);cursor:pointer}
+.crop-btn-primary{flex:2;padding:13px;background:var(--accent);color:#0a0f0d;
+  border:none;border-radius:var(--r);font-size:15px;font-weight:500;font-family:var(--font);cursor:pointer}
+.crop-hint{font-size:11px;color:#666;text-align:center;padding:4px 16px}
+
 .loading-wrap{background:var(--surface);border:0.5px solid var(--border);
   border-radius:var(--r-lg);padding:2.5rem 20px;text-align:center;display:none}
 .loading-wrap.open{display:block}
@@ -586,7 +1492,7 @@ input[type=file]{display:none}
   <!-- HEADER -->
   <div class="header">
     <div class="logo">Clean<span>Label</span></div>
-    <div class="header-badge" id="saved-count">0 saved</div>
+    <div style="display:flex;gap:6px;align-items:center"><div style="font-size:10px;font-family:var(--mono);color:#3b82f6;background:rgba(59,130,246,0.12);padding:3px 8px;border-radius:999px;border:0.5px solid rgba(59,130,246,0.25)">🇪🇺 EU/EFSA</div><div class="header-badge" id="saved-count">0 saved</div></div>
   </div>
 
   <!-- NAV -->
@@ -736,7 +1642,8 @@ input[type=file]{display:none}
   <div class="screen" id="screen-info">
     <div class="info-card">
       <h2>About CleanLabel</h2>
-      <p>CleanLabel analyses food ingredient lists against a built-in database of food additives, E-numbers, preservatives, colours, sweeteners and common ingredients — all offline, no internet required for analysis.</p>
+      <p>CleanLabel analyses food ingredient lists against a built-in database of 737 food additives, E-numbers, preservatives, colours, sweeteners and common ingredients — all offline, no internet required for analysis.</p>
+      <p style="background:rgba(59,130,246,0.1);border:0.5px solid rgba(59,130,246,0.25);border-radius:10px;padding:10px;font-size:13px;color:#93c5fd">🇪🇺 <strong>EU/EFSA standard</strong> — Ratings conform to the European Food Safety Authority (EFSA), the world's strictest food safety standard. Additives banned or flagged by the EU are rated warn or avoid even if permitted in Australia or the USA.</p>
       <p>Tap <strong>Type / paste ingredients</strong> on the Scan screen for instant offline analysis. The photo and barcode options require an internet connection.</p>
     </div>
     <div class="info-card">
@@ -808,6 +1715,195 @@ function openMode(m) {
 }
 
 function handlePhoto(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const img = new Image();
+  const url = URL.createObjectURL(file);
+  img.onload = () => {
+    // Store original image for crop
+    cropOriginalImage = img;
+    URL.revokeObjectURL(url);
+    // Show crop overlay
+    openCrop(img);
+  };
+  img.onerror = () => alert('Could not load image.');
+  img.src = url;
+}
+
+// ── CROP TOOL ─────────────────────────────────────────────────
+let cropOriginalImage = null;
+let cropRect = null; // {x,y,w,h} in canvas coords
+let cropDragging = false;
+let cropDragStart = null;
+let cropResizing = null;
+let cropCanvasScale = 1;
+let cropCanvasOffsetX = 0;
+let cropCanvasOffsetY = 0;
+
+function openCrop(img) {
+  const overlay = document.getElementById('crop-overlay');
+  const canvas = document.getElementById('crop-canvas');
+  const wrap = document.getElementById('crop-canvas-wrap');
+  overlay.classList.add('open');
+  // Size canvas to fit screen
+  const maxW = wrap.clientWidth || window.innerWidth;
+  const maxH = (wrap.clientHeight || window.innerHeight * 0.7);
+  const scale = Math.min(maxW / img.width, maxH / img.height, 1);
+  canvas.width = Math.round(img.width * scale);
+  canvas.height = Math.round(img.height * scale);
+  cropCanvasScale = scale;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  // Default selection = middle 80%
+  const pad = 0.1;
+  cropRect = {
+    x: canvas.width * pad, y: canvas.height * pad,
+    w: canvas.width * (1 - pad*2), h: canvas.height * (1 - pad*2)
+  };
+  drawCropSelection();
+  setupCropEvents(canvas);
+}
+
+function closeCrop() {
+  document.getElementById('crop-overlay').classList.remove('open');
+  document.getElementById('photo-btn').style.display = 'block';
+  document.getElementById('photo-btn').textContent = '📷 Take / choose photo';
+  document.getElementById('photo-btn').onclick = () => document.getElementById('photo-input').click();
+}
+
+function resetCrop() {
+  const canvas = document.getElementById('crop-canvas');
+  const pad = 0.1;
+  cropRect = {
+    x: canvas.width * pad, y: canvas.height * pad,
+    w: canvas.width * (1 - pad*2), h: canvas.height * (1 - pad*2)
+  };
+  drawCropSelection();
+}
+
+function drawCropSelection() {
+  if (!cropRect) return;
+  const sel = document.getElementById('crop-selection');
+  const canvas = document.getElementById('crop-canvas');
+  const wrap = document.getElementById('crop-canvas-wrap');
+  const canvasRect = canvas.getBoundingClientRect();
+  const wrapRect = wrap.getBoundingClientRect();
+  const offsetX = canvasRect.left - wrapRect.left;
+  const offsetY = canvasRect.top - wrapRect.top;
+  sel.style.display = 'block';
+  sel.style.left = (offsetX + cropRect.x) + 'px';
+  sel.style.top = (offsetY + cropRect.y) + 'px';
+  sel.style.width = cropRect.w + 'px';
+  sel.style.height = cropRect.h + 'px';
+}
+
+function getCanvasPos(e, canvas) {
+  const r = canvas.getBoundingClientRect();
+  const touch = e.touches ? e.touches[0] : e;
+  return { x: touch.clientX - r.left, y: touch.clientY - r.top };
+}
+
+function setupCropEvents(canvas) {
+  // Remove old listeners
+  const newCanvas = canvas.cloneNode(true);
+  canvas.parentNode.replaceChild(newCanvas, canvas);
+  const c = document.getElementById('crop-canvas');
+  // Re-draw
+  const ctx = c.getContext('2d');
+  ctx.drawImage(cropOriginalImage, 0, 0, c.width, c.height);
+
+  function startDrag(e) {
+    e.preventDefault();
+    const pos = getCanvasPos(e, c);
+    const target = e.target;
+    // Check if on a handle
+    if (target.dataset && target.dataset.corner) {
+      cropResizing = target.dataset.corner;
+      cropDragStart = pos;
+      return;
+    }
+    cropDragging = true;
+    cropDragStart = pos;
+    cropRect = { x: pos.x, y: pos.y, w: 0, h: 0 };
+    drawCropSelection();
+  }
+  function moveDrag(e) {
+    e.preventDefault();
+    if (!cropDragging && !cropResizing) return;
+    const pos = getCanvasPos(e, c);
+    if (cropDragging) {
+      cropRect.w = pos.x - cropDragStart.x;
+      cropRect.h = pos.y - cropDragStart.y;
+      if (cropRect.w < 0) { cropRect.x = pos.x; cropRect.w = cropDragStart.x - pos.x; }
+      else { cropRect.x = cropDragStart.x; }
+      if (cropRect.h < 0) { cropRect.y = pos.y; cropRect.h = cropDragStart.y - pos.y; }
+      else { cropRect.y = cropDragStart.y; }
+    } else if (cropResizing) {
+      const dx = pos.x - cropDragStart.x;
+      const dy = pos.y - cropDragStart.y;
+      cropDragStart = pos;
+      if (cropResizing === 'tl') { cropRect.x += dx; cropRect.y += dy; cropRect.w -= dx; cropRect.h -= dy; }
+      else if (cropResizing === 'tr') { cropRect.w += dx; cropRect.y += dy; cropRect.h -= dy; }
+      else if (cropResizing === 'bl') { cropRect.x += dx; cropRect.w -= dx; cropRect.h += dy; }
+      else if (cropResizing === 'br') { cropRect.w += dx; cropRect.h += dy; }
+      // Prevent negative
+      if (cropRect.w < 20) cropRect.w = 20;
+      if (cropRect.h < 20) cropRect.h = 20;
+    }
+    drawCropSelection();
+  }
+  function endDrag(e) { cropDragging = false; cropResizing = null; }
+
+  c.addEventListener('mousedown', startDrag);
+  c.addEventListener('mousemove', moveDrag);
+  c.addEventListener('mouseup', endDrag);
+  c.addEventListener('touchstart', startDrag, {passive:false});
+  c.addEventListener('touchmove', moveDrag, {passive:false});
+  c.addEventListener('touchend', endDrag);
+  // Handle drag on handles too
+  document.querySelectorAll('.crop-handle').forEach(h => {
+    h.addEventListener('mousedown', startDrag);
+    h.addEventListener('touchstart', startDrag, {passive:false});
+  });
+}
+
+function applyCrop() {
+  if (!cropRect || cropRect.w < 10 || cropRect.h < 10) {
+    alert('Please draw a selection first.');
+    return;
+  }
+  // Extract cropped region from original image at full resolution
+  const scaleBack = 1 / cropCanvasScale;
+  const sx = Math.round(cropRect.x * scaleBack);
+  const sy = Math.round(cropRect.y * scaleBack);
+  const sw = Math.round(cropRect.w * scaleBack);
+  const sh = Math.round(cropRect.h * scaleBack);
+  const offscreen = document.createElement('canvas');
+  // Scale up cropped region for better OCR
+  const TARGET_W = Math.max(sw, 1200);
+  const aspect = sh / sw;
+  offscreen.width = TARGET_W;
+  offscreen.height = Math.round(TARGET_W * aspect);
+  const ctx = offscreen.getContext('2d');
+  // Enhance contrast for OCR
+  ctx.filter = 'contrast(1.3) brightness(1.05)';
+  ctx.drawImage(cropOriginalImage, sx, sy, sw, sh, 0, 0, offscreen.width, offscreen.height);
+  const croppedDataUrl = offscreen.toDataURL('image/jpeg', 0.95);
+  currentPhotoB64 = croppedDataUrl.split(',')[1];
+  // Show preview of crop
+  const prev = document.getElementById('photo-preview');
+  prev.src = croppedDataUrl;
+  prev.style.display = 'block';
+  // Close crop overlay
+  document.getElementById('crop-overlay').classList.remove('open');
+  // Start OCR
+  document.getElementById('photo-btn').style.display = 'none';
+  document.getElementById('ocr-review-wrap').style.display = 'none';
+  document.getElementById('ocr-progress-wrap').style.display = 'block';
+  document.getElementById('ocr-bar').style.width = '0%';
+  document.getElementById('ocr-status').textContent = 'Loading OCR engine…';
+  runOCR(croppedDataUrl);
+}
   const file = e.target.files[0];
   if (!file) return;
   const img = new Image();
@@ -1000,7 +2096,7 @@ function showResult(data, name) {
   } else { asec.style.display='none'; }
 
   document.getElementById('r-summary').textContent=data.summary;
-  document.getElementById('r-stats').textContent=data.dbStats?'⚡ '+data.dbStats:'';
+  document.getElementById('r-stats').textContent=data.dbStats?'⚡ '+data.dbStats+' · 🇪🇺 EU/EFSA standard':'';
 
   const sb=document.getElementById('save-btn');
   sb.className='save-btn'; sb.textContent='★ Save product'; sb.onclick=saveProduct;
@@ -1133,5 +2229,28 @@ function clearAll() {
   }
 }
 </script>
+
+<!-- Crop overlay -->
+<div class="crop-overlay" id="crop-overlay">
+  <div class="crop-top-bar">
+    <div class="crop-title">Drag to select ingredients area</div>
+    <button class="crop-cancel" onclick="closeCrop()">Cancel</button>
+  </div>
+  <div class="crop-canvas-wrap" id="crop-canvas-wrap">
+    <canvas id="crop-canvas"></canvas>
+    <div class="crop-selection" id="crop-selection" style="display:none">
+      <div class="crop-handle tl" data-corner="tl"></div>
+      <div class="crop-handle tr" data-corner="tr"></div>
+      <div class="crop-handle bl" data-corner="bl"></div>
+      <div class="crop-handle br" data-corner="br"></div>
+    </div>
+  </div>
+  <div class="crop-hint">Draw a box around the ingredients list</div>
+  <div class="crop-bottom-bar">
+    <button class="crop-btn-secondary" onclick="resetCrop()">Reset</button>
+    <button class="crop-btn-primary" onclick="applyCrop()">Crop & Read Text</button>
+  </div>
+</div>
+
 </body>
 </html>
