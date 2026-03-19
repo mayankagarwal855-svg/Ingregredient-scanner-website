@@ -10,6 +10,7 @@
 <title>CleanLabel — Ingredient Scanner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script>
 const INGREDIENT_DB = {
   // ── COLOURS (1xx) ──────────────────────────────────────────
@@ -641,7 +642,21 @@ input[type=file]{display:none}
       <span class="field-label">Product name (optional)</span>
       <div class="field-row"><input type="text" id="photo-name" placeholder="e.g. Oat Crackers"/></div>
       <img id="photo-preview" class="photo-preview"/>
-      <button class="primary-btn" id="photo-btn" onclick="document.getElementById('photo-input').click()">Choose photo</button>
+      <div id="ocr-progress-wrap" style="display:none;margin-bottom:12px">
+        <div style="font-size:12px;color:var(--text3);font-family:var(--mono);margin-bottom:6px" id="ocr-status">Reading text from image…</div>
+        <div style="background:var(--surface3);border-radius:999px;height:4px;overflow:hidden">
+          <div id="ocr-bar" style="height:100%;background:var(--accent);width:0%;transition:width 0.3s;border-radius:999px"></div>
+        </div>
+      </div>
+      <div id="ocr-review-wrap" style="display:none;margin-bottom:12px">
+        <span class="field-label">Text found — review & edit if needed</span>
+        <textarea id="ocr-text" style="min-height:90px;font-size:13px"></textarea>
+        <button class="primary-btn" style="margin-top:8px" onclick="analyseOcrText()">Analyse this text ⚡</button>
+      </div>
+      <button class="primary-btn" id="photo-btn" onclick="document.getElementById('photo-input').click()">📷 Take / choose photo</button>
+      <p style="font-size:11px;color:var(--text3);text-align:center;margin-top:8px;line-height:1.5">
+        Works best with clear, well-lit labels. Text is read on-device — no internet needed.
+      </p>
     </div>
 
     <!-- Barcode input -->
@@ -798,23 +813,74 @@ function handlePhoto(e) {
   const img = new Image();
   const url = URL.createObjectURL(file);
   img.onload = () => {
-    const MAX = 1024;
+    const MAX = 1600;
     let w=img.width, h=img.height;
     if (w>MAX||h>MAX) { if(w>h){h=Math.round(h*MAX/w);w=MAX;}else{w=Math.round(w*MAX/h);h=MAX;} }
     const c = document.createElement('canvas');
     c.width=w; c.height=h;
     c.getContext('2d').drawImage(img,0,0,w,h);
-    const dataUrl = c.toDataURL('image/jpeg',0.85);
+    const dataUrl = c.toDataURL('image/jpeg',0.92);
     currentPhotoB64 = dataUrl.split(',')[1];
-    currentPhotoMime = 'image/jpeg';
     URL.revokeObjectURL(url);
     const prev = document.getElementById('photo-preview');
     prev.src=dataUrl; prev.style.display='block';
-    const btn = document.getElementById('photo-btn');
-    btn.textContent='Analyse photo'; btn.onclick=analysePhoto;
+    // Hide the choose button, show progress
+    document.getElementById('photo-btn').style.display='none';
+    document.getElementById('ocr-review-wrap').style.display='none';
+    document.getElementById('ocr-progress-wrap').style.display='block';
+    document.getElementById('ocr-bar').style.width='0%';
+    document.getElementById('ocr-status').textContent='Loading OCR engine…';
+    runOCR(dataUrl);
   };
   img.onerror = () => alert('Could not load image.');
   img.src = url;
+}
+
+async function runOCR(imageData) {
+  try {
+    const { createWorker } = Tesseract;
+    const worker = await createWorker('eng', 1, {
+      logger: m => {
+        if (m.status === 'recognizing text') {
+          const pct = Math.round(m.progress * 100);
+          document.getElementById('ocr-bar').style.width = pct + '%';
+          document.getElementById('ocr-status').textContent = 'Reading text… ' + pct + '%';
+        } else if (m.status === 'loading tesseract core' || m.status === 'initializing tesseract') {
+          document.getElementById('ocr-status').textContent = 'Loading OCR engine…';
+        } else if (m.status === 'loading language traineddata' || m.status === 'initializing api') {
+          document.getElementById('ocr-status').textContent = 'Loading language data…';
+        }
+      }
+    });
+    const { data: { text } } = await worker.recognize(imageData);
+    await worker.terminate();
+    document.getElementById('ocr-progress-wrap').style.display='none';
+    document.getElementById('ocr-bar').style.width='0%';
+    // Show text for review
+    const cleaned = text.replace(/[\r\n]+/g, ', ').replace(/,\s*,/g, ',').trim();
+    document.getElementById('ocr-text').value = cleaned;
+    document.getElementById('ocr-review-wrap').style.display='block';
+    document.getElementById('photo-btn').style.display='block';
+    document.getElementById('photo-btn').textContent='📷 Try different photo';
+    document.getElementById('photo-btn').onclick = () => document.getElementById('photo-input').click();
+  } catch(err) {
+    document.getElementById('ocr-progress-wrap').style.display='none';
+    document.getElementById('photo-btn').style.display='block';
+    document.getElementById('photo-btn').textContent='📷 Take / choose photo';
+    alert('Could not read text from image. Please try a clearer photo or type the ingredients manually.');
+  }
+}
+
+function analyseOcrText() {
+  const text = document.getElementById('ocr-text').value.trim();
+  if (!text) { alert('No text to analyse. Please try another photo.'); return; }
+  const name = document.getElementById('photo-name').value.trim() || 'Scanned product';
+  showLoading('Checking local database…');
+  setTimeout(() => {
+    const { known, unknown } = analyseText(text);
+    const result = buildResult(known, unknown);
+    showResult(result, name);
+  }, 80);
 }
 
 // ── Tokeniser & local lookup ───────────────────────────────────
@@ -990,9 +1056,8 @@ async function analyseBarcode() {
 }
 
 async function analysePhoto() {
-  alert('Photo analysis requires AI. For fully offline use, please type or paste the ingredients list instead.\n\nTip: Read the label and use the "Type / paste ingredients" option.');
-  document.getElementById('loading-wrap').classList.remove('open');
-  document.getElementById('input-photo').classList.remove('open');
+  // Now handled by OCR — this is a no-op fallback
+  document.getElementById('photo-input').click();
 }
 
 // ── Save / Saved ───────────────────────────────────────────────
