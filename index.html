@@ -1714,21 +1714,6 @@ function openMode(m) {
   if (m==='photo') document.getElementById('photo-input').click();
 }
 
-function handlePhoto(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const img = new Image();
-  const url = URL.createObjectURL(file);
-  img.onload = () => {
-    // Store original image for crop
-    cropOriginalImage = img;
-    URL.revokeObjectURL(url);
-    // Show crop overlay
-    openCrop(img);
-  };
-  img.onerror = () => alert('Could not load image.');
-  img.src = url;
-}
 
 // ── CROP TOOL ─────────────────────────────────────────────────
 let cropOriginalImage = null;
@@ -1904,6 +1889,8 @@ function applyCrop() {
   document.getElementById('ocr-status').textContent = 'Loading OCR engine…';
   runOCR(croppedDataUrl);
 }
+
+function handlePhoto(e) {
   const file = e.target.files[0];
   if (!file) return;
   const img = new Image();
